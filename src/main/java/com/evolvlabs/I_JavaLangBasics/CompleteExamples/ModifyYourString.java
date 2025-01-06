@@ -1,4 +1,4 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.CompleteExamples;
 /**
  * <body style="color: white">Este método imprime una leyenda visual en un marco que indica los colores 
  * que representan números, caracteres y símbolos.</body>

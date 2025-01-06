@@ -1,7 +1,7 @@
 package com.evolvlabs.II_ObjectOrientedProgramming.BookExample;
 
 import com.evolvlabs.IV_Extras.Colorizer;
-import com.evolvlabs.I_JavaLangBasics.ExceptionsPartTwo;
+import com.evolvlabs.I_JavaLangBasics.Exceptions.ExceptionsPartTwo;
 
 import java.util.Arrays;
 import java.util.Collections;

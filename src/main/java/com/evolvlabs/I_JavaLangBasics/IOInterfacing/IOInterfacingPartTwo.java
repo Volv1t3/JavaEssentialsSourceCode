@@ -1,6 +1,7 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.IOInterfacing;
 
 import com.evolvlabs.IV_Extras.Colorizer;
+import com.evolvlabs.I_JavaLangBasics.Exceptions.ExceptionsPartTwo;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -242,7 +243,8 @@ public class IOInterfacingPartTwo {
 
                 //! Hagamos lo mismo con un simple StringReader
                 System.out.println(Colorizer.colorWithYellowLetters("Ahora vamos a leer el archivo usando un StringReader"));
-                StringReader stringReader = new StringReader( /*!Para funcionar, un string reader requiere de tener una String GENERAL que tenga todo el archivo*/
+                StringReader stringReader = new StringReader( /*!Para funcionar, un string reader requiere de tener
+                                                                    ! una String GENERAL que tenga todo el archivo*/
                         Files.readString( /*! Files.readString permite crear esta string mediante el PATH de un archivo*/
                                 Paths.get( /*! Paths.get nos devuelve el PATH de un archivo enviandole una String que represente su ubicacion*/
                                         RESOURCE_FILE_B)));

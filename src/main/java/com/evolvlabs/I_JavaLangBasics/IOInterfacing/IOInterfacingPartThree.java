@@ -1,6 +1,7 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.IOInterfacing;
 
 import com.evolvlabs.IV_Extras.Colorizer;
+import com.evolvlabs.I_JavaLangBasics.Exceptions.ExceptionsPartTwo;
 
 import java.io.*;
 import java.nio.file.*;
@@ -14,7 +15,9 @@ import java.util.Scanner;
  */
 public class IOInterfacingPartThree {
 
-    static final String USER_PATH = Paths.get(System.getProperty("user.home"),"Documents","PrintWriterOutput").toString();
+    static final String USER_PATH = Paths.get(System.getProperty("user.home"),
+            System.getProperty("user.language").equals("es") ? "Documentos" : "Documents",
+            "PrintWriterOutput").toString();
     static final Path USER_DIR = Paths.get(USER_PATH);
     private static Scanner scannerInstance = new Scanner(System.in);
 
@@ -22,7 +25,7 @@ public class IOInterfacingPartThree {
         while (true) {
             System.out.println(Colorizer.colorWithYellowLetters("Bienvenido a nuestro programa de prueba para archivos de texto!"));
             System.out.println(Colorizer.colorWithYellowLetters("Por favor, selecciona una opcion:"));
-            IOInterfacingPartOne.printMenuOption("1. Crear y escribir hacia archiso usando PrintWriter", 
+            IOInterfacingPartOne.printMenuOption("1. Crear y escribir hacia archivo usando PrintWriter",
                     "%-80s", "Opcion Numero [1]", "%60s");
             IOInterfacingPartOne.printMenuOption("2. Crear y escribir hacia archivos usando BufferWriter", 
                     "%-80s", "Opcion Numero [2]", "%60s");
@@ -90,7 +93,9 @@ public class IOInterfacingPartThree {
         {
             //? Constantes del usuario: Creamos en esta seccion el directorio para guardar los archivos
             String userLibPath = System.getProperty("user.home");
-            String userPath = Paths.get(userLibPath,"Documents","PrintWriterOutput").toString();
+            String userPath = Paths.get(userLibPath, 
+                    System.getProperty("user.language").equals("es") 
+                            ? "Documentos" : "Documents", "PrintWriterOutput").toString();
             Path dir = Paths.get(userPath);
             if (!Files.exists(dir)){
                 Files.createDirectory(dir);
@@ -453,10 +458,12 @@ public class IOInterfacingPartThree {
                                 }
                             }
                             while (true);
+                            boolean emptyFile = false;
                             System.out.println(Colorizer.colorWithYellowLetters("Durante ejecucion, podra ingresar comandos al ingresar :c\n"));
                             do {
                                 if (readLine == null){
                                     System.out.println("Se ha llegado al final del archivo ingrese el comando para guardar: ");
+                                    emptyFile = true;
                                 }
                                 else {
                                     System.out.print("[ " + numberedReader.getLineNumber() + " | " +
@@ -502,10 +509,10 @@ public class IOInterfacingPartThree {
                                         System.out.println("Cambios descartados. Saliendo...");
                                         return;
                                     default:
-                                        if (workMode.equals(":a")) {
+                                        if (workMode.equals(":a") && !emptyFile) {
                                             stringWriter.write(readLine + line);
                                             stringWriter.write(System.lineSeparator());
-                                        } else if (workMode.equals(":r")) {
+                                        } else if (workMode.equals(":r") && !emptyFile) {
                                             if (readLine != null && line.isEmpty()){
                                                 stringWriter.write(readLine);
                                                 stringWriter.write(System.lineSeparator());
@@ -519,6 +526,7 @@ public class IOInterfacingPartThree {
                                                 stringWriter.write(System.lineSeparator());
                                             }
                                         }
+
                                 }
                                 readLine = numberedReader.readLine();
                             } while(true);

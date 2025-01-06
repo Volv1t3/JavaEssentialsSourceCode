@@ -1,9 +1,8 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.ControlStructures;
 
 
 import com.evolvlabs.IV_Extras.Colorizer;
 
-import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 

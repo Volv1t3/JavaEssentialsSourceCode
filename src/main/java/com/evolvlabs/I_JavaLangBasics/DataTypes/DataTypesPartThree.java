@@ -1,10 +1,9 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.DataTypes;
 
 import com.evolvlabs.IV_Extras.Colorizer;
 
 import java.security.SecureRandom;
 import java.util.Arrays;
-import java.util.Random;
 
 /**
  * <body style="color: white"> El presente archivo contiene varias declaraciones de los arreglos de primitivos que son analogos

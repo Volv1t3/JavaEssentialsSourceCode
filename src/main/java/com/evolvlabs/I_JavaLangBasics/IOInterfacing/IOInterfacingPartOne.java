@@ -1,6 +1,7 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.IOInterfacing;
 
 import com.evolvlabs.IV_Extras.Colorizer;
+import com.evolvlabs.I_JavaLangBasics.Exceptions.ExceptionsPartTwo;
 
 import java.io.IOException;
 import java.net.URI;
@@ -145,8 +146,10 @@ public class IOInterfacingPartOne {
        try(
                //! Obtiene el directorio de documentos del usuario a través de la propiedad del sistema del SO
                DirectoryStream<Path> userDocumentsStream =
-                       Files.newDirectoryStream( /*Aqui usamos la propiedad del sisema user.home para entrar a la carpeta base del usuario*/
-                               Path.of(System.getProperty("user.home"), "Documents"))
+                       Files.newDirectoryStream( /*Determina si usar 'Documents' o
+                       'Documentos' basado en el idioma del sistema operativo*/
+                               Path.of(System.getProperty("user.home"),
+                                       System.getProperty("user.language").equalsIgnoreCase("es") ? "Documentos" : "Documents"))
                /*! La manera de Path.of anterior permite concatenar, abstrayendo la formacion de un URI dandole solo los nombres de las carpetas
                  ! a las que tiene que entrar*/
        ){

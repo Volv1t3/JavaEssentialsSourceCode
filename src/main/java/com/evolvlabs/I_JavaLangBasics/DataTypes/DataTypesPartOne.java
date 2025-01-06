@@ -1,4 +1,4 @@
-package com.evolvlabs.I_JavaLangBasics;
+package com.evolvlabs.I_JavaLangBasics.DataTypes;
 
 //!Formato de las declaraciones de importe
 import com.evolvlabs.IV_Extras.Colorizer;
