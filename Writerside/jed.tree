@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="jed"
+                  name="Java Essentials | Documentacion"
+                  start-page="Introduccion.md">
+
+    <toc-element topic="Introduccion.md"/>
+    <toc-element toc-title="Installation Y Overview">
+        <toc-element topic="InstallationAndOverview.md">
+        </toc-element>
+    </toc-element>
+    <toc-element toc-title="Language Overview">
+        <toc-element topic="Java-VS-C.md">
+        </toc-element>
+        <toc-element topic="Bases-del-Lenguaje.md"/>
+        <toc-element topic="Tipos-De-Dato.md"/>
+        <toc-element topic="Estructuras-de-Control.md"/>
+        <toc-element topic="Excepciones.md"/>
+        <toc-element topic="Manejo-I-O.md"/>
+    </toc-element>
+</instance-profile>

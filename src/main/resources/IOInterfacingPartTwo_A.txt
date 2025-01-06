@@ -1,0 +1,21 @@
+Gracias por inscribirte a este curso!
+
+La linea anterior la dejo vacia para que en consola se imprima un System.out.println() vacio
+Estas lineas pongo un poco de texto para que se vea la capacidad de leer por lineas del Scanner
+Una de las ventajas de este sistema es que, al ser el sistema de manejo de consola es muy intuitivo
+ademas de que permite utilizar un objeto que implementa una interface Closeable y nos permite
+cerrarlo directamente en un try-with-resources block 
+
+En fin, luego veremos muchos mas ejemplos de modos de lectura de un archivo, por ahora pondre un poco de texto 
+al estilo relleno de Powerpoint
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+Praesent pharetra, justo ut scelerisque mattis, leo quam aliquam nunc, a suscipit elit erat nec urna.
+
+Hello World, how are you?
+Hello World
