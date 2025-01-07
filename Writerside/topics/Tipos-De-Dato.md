@@ -17,14 +17,14 @@ primitive types are the boolean type and the numeric types [...] The reference t
 types, and array types.</i>
 </procedure>
 <p>De esta manera, en Java tenemos dos grupos, uno mucho más extenso que el otro, en el cual nuestros tipos de datos 
-se agrupan. En general, todas las variables que se declaren con el estilo de <code><b>byte, short, int, long, o 
+se agrupan. En general, todas las variables que se declaren con el estilo de <code>byte, short, int, long, o 
 float, double, char o boolean
-</b></code>, son considerados como tipos primitivos (es decir aquellos que tienen una minúscula en su inicial.) En 
+</code>, son considerados como tipos primitivos (es decir aquellos que tienen una minúscula en su inicial.) En 
 contraste, los tipos estos mismos tipos de dato tienen su contraparte de tipo referencial en el estilo de 
-<code><b>Byte, Short, Integer, Long, Float, Double, Char, Boolean</b></code>.
+<code>Byte, Short, Integer, Long, Float, Double, Char, Boolean</code>.
 <br/><br/>
 En Java hay que tener en cuenta que la mayoría de los valores se guardan en una memoria de tipo 
-<code><b>Heap</b></code>, más no en Stack a menos que sean de tipo primitivo, por tanto, siempre vamos a tener una 
+<code>Heap</code>, más no en Stack a menos que sean de tipo primitivo, por tanto, siempre vamos a tener una 
 gran cantidad de tipos referenciales, cuya implementación es en sí una clase, comparado con algo que es directamente 
 un valor en memoria, como es un primitivo.
 </p>
@@ -37,9 +37,9 @@ sentido al igual que en C++ tenemos versiones con single y double precision, dá
 informacion respectivamente.
 </p>
 <procedure>
-<p>Es importante destacar que en Java no existen los <code><b>unsigned int, long, long long, unsigned long, etc. 
-</b></code> Esto es porque Java no trabaja con valores unsigned en su formato interno de números. No obstante, Java 
-tiene métodos en clases como <code><b>Integer</b></code> que permite realizar operaciones como division y 
+<p>Es importante destacar que en Java no existen los <code>unsigned int, long, long long, unsigned long, etc. 
+</code> Esto es porque Java no trabaja con valores unsigned en su formato interno de números. No obstante, Java 
+tiene métodos en clases como <code>Integer</code> que permite realizar operaciones como division y 
 multiplicacion en modo unsigned. 
 </p>
 </procedure>
@@ -49,7 +49,7 @@ este tipo de dato, a continuación se muestra un listado de las características
 <tabs>
 <tab title="Byte">
 <list style="alpha-lower">
-<li>Un tipo de dato que implementa la <code>interface  <b>Number</b> y es hijo de la clase Object</code></li>
+<li>Un tipo de dato que implementa la <code>interface  Number y es hijo de la clase Object</code></li>
 <li>Permite almacenar valores entre -128 hasta 127</li>
 <li>Se representa internamente con 8 bits</li>
 <li>Ejemplo de declaración:
@@ -74,7 +74,7 @@ public class Example{
 </tab>
 <tab title="Short">
 <list style="alpha-lower">
-<li>Un tipo de dato que implementa la <code>interface <b>Number</b> y es hijo de la clase Object</code></li>
+<li>Un tipo de dato que implementa la <code>interface Number y es hijo de la clase Object</code></li>
 <li>Permite al usuario almacenar valores entre -32768 hasta 32767 </li>
 <li>Se representa en memoria usando 16 bits</li>
 <li>Ejemplo de declaración:
@@ -97,7 +97,7 @@ public class example{
 </tab>
 <tab title="Integer">
 <list style="alpha-lower">
-<li> Un tipo de dato que implementa la <code>interface <b>Number</b> y es hijo de la clase <b>Object</b></code>
+<li> Un tipo de dato que implementa la <code>interface Number y es hijo de la clase Object</code>
 </li>
 <li> Permite al usuario almacenar valores entre -2147483648 y 2147483647
 </li>
@@ -126,7 +126,7 @@ public class example{
 </tab>
 <tab title="Long">
 <list>
-<li>Un tipo de dato que implementa la <code>interface <b>Number</b> y es hijo de la clase <b>Object</b></code></li>
+<li>Un tipo de dato que implementa la <code>interface Number y es hijo de la clase Object</code></li>
 <li>Permite al usuario almacenar valores entre -9223372036854775808 y 9223372036854775807</li>
 <li>Ejemplo de declaración:
 <code-block lang="Java">
@@ -179,7 +179,7 @@ public class example{
 </tab>
 <tab title="Float">
 <list>
-<li>Un tipo de dato que implementa la <code>interface <b>Number</b> y es hijo de la clase <b>Object</b></code></li>
+<li>Un tipo de dato que implementa la <code>interface Number y es hijo de la clase Object</code></li>
 <li>Permite al usuario almacenar números en coma flotante de precisión simple</li>
 <li>Se representa en memoria usando 32 bits</li>
 <li>Ejemplo de declaración:
@@ -208,7 +208,7 @@ protected float floatThree = 3.14f;
 </tab>
 <tab title="Double">
 <list>
-<li>Un tipo de dato que implementa la <code>interface <b>Number</b> y es hijo de la clase <b>Object</b></code></li>
+<li>Un tipo de dato que implementa la <code>interface Number y es hijo de la clase Object</code></li>
 <li>Permite al usuario almacenar números en coma flotante de doble precisión</li>
 <li>Se representa en memoria usando 64 bits</li>
 <li>Ejemplo de declaración:
@@ -244,7 +244,7 @@ binarias, etc. Solo que estos objetos no tienen ciertos métodos útiles como se
 referenciales. Sin embargo, hasta este momento solo hemos tomado a estos objetos como contrapartes, pero en realidad 
 son una ayuda.
 <br/><br/>
-Todas las declaraciónes de estilo <code><b>Character ..., final Double..., final Integer, Integer, etc.</b></code>, 
+Todas las declaraciónes de estilo <code>Character ..., final Double..., final Integer, Integer, etc.</code>, 
 tienen algo en común, no solo son el mismo nombre, pero en mayúscula, sino que son clases envolventes de un tipo de 
 dato primitivo. En Java, se trabaja mucho con los tipos de datos de referencia, ya que se pasan por referencia en 
 métodos, constructores, copias, etc. Además, estos objetos pueden llegar a compartir la misma referencia en memoria 
@@ -252,7 +252,7 @@ y en general son mucho más útiles que un primitivo.
 <br/><br/>
 Por este motivo, Java tiene los primitivos, para aquel uso de datos rápido y que no necesite una variable en el Heap 
 sino en el stack, como un contador, un parámetro base, etc. Paralelamente, también cuenta con una clase envolvente, 
-Wrapper Classes, para cada primitivo con <code><b>su mismo nombre pero con la inicial en mayúsculas</b></code>.
+Wrapper Classes, para cada primitivo con <code>su mismo nombre pero con la inicial en mayúsculas</code>.
 <br/>
 <br/>
 Los beneficios de uno sobre el otro dependen del caso y en algunos momentos el IDE nos recomendará cambiar de uno 
@@ -275,8 +275,8 @@ to no object. </i>
 notar que class types, interface types y array types son cosas simples que ya las hemos visto en C++ y que veremos 
 mas adelanta en nuestro estudio en Java. <br/><br/>
 Class types y Array types son los típicos objetos de una clase (cualquiera que  esta sea), y array types son 
-aquellas instancias de un arreglo de valores primitivos o clases definidas de la forma <code><b>dataType[]
-</b></code>, que utilizamos a menudo cuando implementamos un arreglo de tamaño conocido. De esta forma dos de los 
+aquellas instancias de un arreglo de valores primitivos o clases definidas de la forma <code>dataType[]
+</code>, que utilizamos a menudo cuando implementamos un arreglo de tamaño conocido. De esta forma dos de los 
 cuatro tipos referenciales quedan sin analizar. Interface types los veremos en la sección de programación orientada 
 a objetos, y type variables en la sección de genéricos.
 <br/><br/>
@@ -323,9 +323,9 @@ public class example {
 
 ### Autoboxing y Unboxing de Primitivos a Wrappers
 <p>En Java, las clases primitivas no siempre requieren ser creadas con una llamada de tipo 
-<code><b>parse{DataType} o valueOf()</b></code>, estas también se pueden crear con el simple hecho de definir a la 
+<code>parse{DataType} o valueOf()</code>, estas también se pueden crear con el simple hecho de definir a la 
 variable con un tipo de dato envolvente y con un inicializador de tipo primitivo. En estos casos el programa realiza 
-un procedimiento llamado <code><b>Boxing</b></code> de las variables, que es la forma de Java de convertir un valor 
+un procedimiento llamado <code>Boxing</code> de las variables, que es la forma de Java de convertir un valor 
 primitivo hacia uno de su clase envolvente.
 </p>
 <procedure>
@@ -337,7 +337,7 @@ Esto se puede realizar en nueve casos distintos</p>
 <list columns="1">
 <li>Si el tipo es <code>boolean, byte, char, short, int long</code>, una conversion boxing lo transforma en 
 <code>Boolean, Byte, Char, ... </code>, siempre y 
-cuando la nueva instancia, al aplicarle <code><b>booleanValue() ... </b></code> retorne el valor original</li>
+cuando la nueva instancia, al aplicarle <code>booleanValue() ... </code> retorne el valor original</li>
 <li>En el caso de los valores <code>float y double</code>, la referencia se analiza en el caso de que esta sea NaN 
 (Not a Number), y se transforma a su respectivo valor o a <code>Float.NaN o Double.NaN</code> respectivamente </li>
 <li> Idealmente, se considera que esta regla no debería de fallar, en sistemas con menor memoria existe la 
@@ -352,7 +352,7 @@ envuelta alrededor de un valor primitivo, hacia un valor primitivo base. Es deci
 localizacion en memoria del Stack. En el caso de Java existen nueve conversiones de nuevo</p>
 <list>
 <li>Si la instancia envuelta es de tipo <code>Boolean, Char, Integer, Long, Short, Float, o Double</code>, el 
-proceso de unboxing se refiere a pasar mediante un método en el estilo de <code><b>{dataType}Value()</b></code> 
+proceso de unboxing se refiere a pasar mediante un método en el estilo de <code>{dataType}Value()</code> 
 hacia un primitivo correspondiente.</li>
 </list>
 </tab>
@@ -421,14 +421,14 @@ public class AutoboxingUnboxingExample {
 <p>Las Strings son un tipo de dato de Referencia, no iguales a un tipo envolvente pero que si se trabajan como 
 objetos en memoria y cuyas referencias pueden ser compartidas entre partes de un programa. Una String en Java es una 
 collecion de caracteres immutable, es decir, su contenido puede ser usado y su referencia sobreescrita 
-<code><b>pero el contenido <i>dentro</i> de esta referencia no puede ser sobreescrito ni editado</b></code>. <br/><br/>
+<code>pero el contenido dentro de esta referencia no puede ser sobreescrito ni editado</code>. <br/><br/>
 Ustedes entonces se preguntarán porque en algunos comentarios simplemente hacemos <code>String + String1</code>, 
 esto se da porque al realizar una operación de concatenación de esta manera lo que estamos creando es una nueva 
 String, formada a través de la concatenación de otras cadenas, más no modificando String.
 <br/><br/>
 Para trabajar con Strings es tan simple como definir una variable de tipo String, ya que está una vez declarada 
 hagas lo que hagas no la puedes cambiar. No obstante, en Java existen dos clases adicionales que nos permiten manejar 
-Strings y modificarlas, estas son <code><b>StringBuilders y StringBuffers</b></code>. 
+Strings y modificarlas, estas son <code>StringBuilders y StringBuffers</code>. 
 <br/><br/>
 La forma de trabajar con estos tipos de variables se presenta a continuación
 </p>

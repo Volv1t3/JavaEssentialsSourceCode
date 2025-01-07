@@ -29,24 +29,24 @@ Para entender esto, debemos analizar la jerarquía de excepciones en Java
 
 ## Jerarquía Java Exception
 
-<p>Dentro del lenguaje de Java, bajo la clase <code><b>Objet</b></code>, tenemos la clase 
-<code><b>Throwable</b></code>, la clase Throwable es la raíz de toda la jerarquía de clases relacionadas con 
+<p>Dentro del lenguaje de Java, bajo la clase <code>Objet</code>, tenemos la clase 
+<code>Throwable</code>, la clase Throwable es la raíz de toda la jerarquía de clases relacionadas con 
 Excepciones y Errores. En general, todas las Excepciones y los Errores que pueden ocurrir durante la compilación, o 
 ejecución del código son hijas de la clase <code>Exception</code>, y generalmente ese espera que el programa pueda 
 recuperarse de 
 ese tipo de excepciones.
 <br/><br/>
-Dentro de las excepciones existen los dos grupos anteriormente mencionados, <code><b>Checked and Unchecked 
-Exceptions</b></code>. Dentro de las clases internas del lenguaje, la separación entre ambos está dado por la clase 
-padre de cada grupo. <code><b>Checked Exceptions</b> tienen como padre la clase <b>Exception</b></code>, mientras 
-que <code><b>Unchecked Exceptions</b> tienen como padre la clase <b>RuntimeException</b></code>.
+Dentro de las excepciones existen los dos grupos anteriormente mencionados, <code>Checked and Unchecked 
+Exceptions</code>. Dentro de las clases internas del lenguaje, la separación entre ambos está dado por la clase 
+padre de cada grupo. <code>Checked Exceptions tienen como padre la clase Exception</code>, mientras 
+que <code>Unchecked Exceptions tienen como padre la clase RuntimeException</code>.
 <br/><br/>
 Para comprender la diferencia entre ambas es importante tomarnos un segundo para analizar la literatura de estas
 </p>
 
 ### Java Checked Exceptions
 <p>Las <b>Checked Exceptions</b> en Java, se identifican por su clase padre, como se ha mencionado, es decir se las 
-identifica al tener como padre <code><b>Exception</b></code>. La mayoría de estas clases tienen como objetivo darle a 
+identifica al tener como padre <code>Exception</code>. La mayoría de estas clases tienen como objetivo darle a 
 conocer al usuario antes de que el código corra, durante compilación o durante un análisis estático por parte del 
 entorno, que esta clase de excepciones pueden suceder y permitirle atraparlas y corregirlas en un bloque catch.
 <br/><br/>
@@ -55,7 +55,7 @@ traves de la clase <b>Exception</b>, para que el compilador logre analizar estas
 aprovechar el sistema de revision durante compilación del lenguaje.
 <br/><br/>
 Adicionalmente, el sistema de Java está diseñado para que cada método de la librería estándar que se utilice tenga 
-establecido en su contrato (a través de la keyword <code><b>throws</b></code> las excepciones de este tipo que el 
+establecido en su contrato (a través de la keyword <code>throws</code> las excepciones de este tipo que el 
 programador debe solucionar antes de ejecución mediante bloques catch.
 </p>
 <p>Ejemplos de este tipo de excepciones son muchos, pero <code>se ven en varias clases de Java.IO y Java.NIO
@@ -79,12 +79,12 @@ definición para una clase cuyo nombre se quiso cargar por la JVM</li>
 
 ### Unchecked Exceptions
 <p>Las <b>Unchecked Exceptions</b> en Java, se identifican por su clase padre, como se ha mencionado anteriormente, 
-es decir se las identifica al tener como padre <code><b>RuntimeException o alguna clase derivada</b></code>. La 
+es decir se las identifica al tener como padre <code>RuntimeException o alguna clase derivada</code>. La 
 mayoria de estas clases no se conocen durante la escritura, análisis estático, o compilación del programa, y solo 
 ocurren cuando un error grave se da durante la ejecución del código.
 <br/><br/>
-Segun la documentación oficial de Java <code><i>The unchecked exception classes are the run-time 
-exception classes and the error classes</i></code> esto quiere decir que en un programa, las unchecked exceptions 
+Segun la documentación oficial de Java <code>The unchecked exception classes are the run-time 
+exception classes and the error classes</code> esto quiere decir que en un programa, las unchecked exceptions 
 son todos aquellos errores que suceden por errores de lógica o errores graves de la JVM o del sistema operativo. 
 <br/><br/>
 <code>Error</code>, mencionado en la documentación anterior es un tipo de <code>Throwable</code> el cual representa 
@@ -120,7 +120,7 @@ Se pueden usar uno o varios en un nested try-catch block, por lo que se utiliza 
 manejar y lanzar excepciones internas para el manejo de estados en aplicativos I/O. 
 <br/><br/>
 Dentro de Java, a diferencia de C++, se introduce una nueva parte al bloque normal de try-catch, la clausula 
-<code><b>finally</b></code>, que se ejecuta al finalizar todo el código dentro del bloque try, e <code>inclusive 
+<code>finally</code>, que se ejecuta al finalizar todo el código dentro del bloque try, e <code>inclusive 
 si se lanzan excepciones dentro del código, este bloque se ejecuta siempre.</code>
 <br/><br/>
 La razón de existencia de este nuevo bloque de código es que en Java existen los llamados recursos, los recursos son 
@@ -130,7 +130,7 @@ en ámbitos de consola, el input de consola lo realiza un scanner cuyos recursos
 es entrada de teclado, etc., y, por tanto, requiere liberar esos recursos.
 <br/><br/>
 En un programa donde no exista un bloque finally y los recursos no se cierren están infringiendo con las normativas 
-del lenguaje. Es por este motivo que Java creo los <code><b>try-with-resources</b> statements</code>, que son 
+del lenguaje. Es por este motivo que Java creo los <code>try-with-resources statements</code>, que son 
 bloques try-catch con recursos cuyo cierre se encarga directamente el lenguaje para evitar problemás de fuga de
 recursos.
 <br/><br/> 
@@ -147,16 +147,16 @@ Cuando definimos más de una excepción es importante tener en cuenta el tipo de
 Unchecked)</code>, y la asociatividad que tienen algunos tipos de clases dentro de estas jerarquías, por ejemplo 
 <code>IllegalThreadStateException</code> siendo una clase hija de <code>IllegalArgumentException</code>. Esto porque en Java, y en especial en 
 los bloques try-catch las excepciones se manejan como si fueran un caso switch. <br/><br/>
-<code><b>Siempre se espera 
+<code>Siempre se espera 
 ir de 
 los 
 más general a lo particular
-</b></code>, es decir, si un bloque puede lanzar un <code>IllegalArgumentException</code>, un 
+</code>, es decir, si un bloque puede lanzar un <code>IllegalArgumentException</code>, un 
 <code>IOException</code>, y otras que no 
 sabemos, 
 debemos definir bloques de código primero para <code>IOException</code>, luego para 
 <code>IllegalArgumentException</code>,  seguido de 
-<code>si queremos</code>, bloques catch para <code><b>Exception y RuntimeException</b></code> adicionalmente.
+<code>si queremos</code>, bloques catch para <code>Exception y RuntimeException</code> adicionalmente.
 <br/><br/>
 A continuación se establecen tres ejemplos que demuestran el trabajo con diversos bloques de código y las 
 excepciones que pueden lanzar
@@ -339,7 +339,7 @@ evitar problemás con el sistema operativo como errores en los descriptores de a
 todavia abiertas.
 <br/><br/>
 La estructura de estos bloques es clara, y fácil de recordar, simplemente se debe añadir al final de nuestro 
-try-catch block original, un nuevo bloque de código después de la palabra reservada <code><b>finally</b></code>. 
+try-catch block original, un nuevo bloque de código después de la palabra reservada <code>finally</code>. 
 Claro esta, que al ser una añadidura dentro de nuestra lógica general de manejo de excepciones es importante tomar 
 en cuenta algunos detalles de su implementación.
 </p>
@@ -371,7 +371,8 @@ de código útiles para ejemplificar su uso</p>
 <procedure>
 <tabs>
 <tab title="Try-catch-finally Block I">
-<code-block lang="Java"> 
+
+```Java
 package exception_examples;
 
 import java.io.File;
@@ -408,9 +409,10 @@ public class ExceptionExampleFour{
         }
     }
 }
-</code-block>
+```
 </tab><tab title="Try-catch-finally Block II">
-<code-block lang="Java">
+
+```Java
 package exception_example;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -448,10 +450,11 @@ public class ExceptionExampleFive{
         }
 
     }
-</code-block>
+```
 </tab>
 <tab title="Try-catch-finally Block III">
-<code-block lang="Java">
+
+```Java
 package exception_example;
 
 public class ExceptionExampleSix{
@@ -507,7 +510,7 @@ Scanner fileScanner = null; // Scanner to read file
 
 }
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -519,7 +522,7 @@ En estos casos, hay tantos puntos posibles de error, que uno como programador no
 las posibles combinaciones de errores (que tal si el archivo se abre, pero hay un problema de la JVM al generar el 
 lector/escritor al archivo. Que tal si el archivo existe, pero el sistema de Java no puede comunicarse con el sistema 
 operativo y no logra abrir el archivo), en estos casos, se utiliza un nuevo tipo de bloque try-catch, el famoso 
-<code><b>Try-with-Resources block</b></code>
+<code>Try-with-Resources block</code>
 </p>
 
 ### Try-with-Resources block
@@ -640,7 +643,8 @@ public class ExceptionExampleEight{
 </code-block>
 </tab>
 <tab title="Try-With-Resource Block III">
-<code-block lang="Java">
+
+```Java
 package exception_examples;
 import java.io.*;
 
@@ -685,7 +689,7 @@ File folder = new File(folderPath);
 
     }
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>

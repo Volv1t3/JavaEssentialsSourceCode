@@ -36,7 +36,7 @@ exploran su IDE podrán encontrar nociones de estos como <code>Package-info.java
 que se pueden crear en el entorno para facilitar el trabajo con estas estructuras.
 <br/><br/>
 No obstante, la base necesaria para el trabajo de Java en un curso como este, o en un curso de estructuras de datos 
-son los <code><b>Packages</b></code>.
+son los <code>Packages</code>.
 </p>
 
 ### Packages
@@ -100,7 +100,7 @@ con un '_' y luego escribir el nombre original.
 <li><b><format color="CornFlowerBlue">Colisiones de Paquetes</format></b>: <p>Si el nombre de un paquete colisiona con otro, los nombres deben ser ajustados por el desarrollador. El lenguaje no permite colisiones de este tipo dentro del sistema,
 solo clases con el mismo nombre en diferentes paquetes.</p></li> 
 <li><b><format color="CornFlowerBlue">Formato de Importe</format></b>: <p>Al importar una clase o un grupo de clases,
-o inclusive <code><b>al definir una clase dentro de un paquete</b></code>, la línea que declara el paquete 
+o inclusive <code>al definir una clase dentro de un paquete</code>, la línea que declara el paquete 
 debe ser la primera en aparecer. <br/><br/>
 Por otro lado, al importar de un paquete, ya sea una clase o varias, se debe escribir todo el nombre desde la base 
 del paquete. Por ejemplo, en nuestro código tendríamos:
@@ -141,7 +141,7 @@ importe solo determinan una relación entre paquetes, como por ejemplo aquellos 
 ## Everything-as-an-Object
 
 <p>En Java, como pudieron haber notado por el simple hecho de la definición de los códigos anteriores, 
-<code><b>todo es un objeto</b></code>. Desde el código que escribo en un archivo main, a la clase System que se usa 
+<code>todo es un objeto</code>. Desde el código que escribo en un archivo main, a la clase System que se usa 
 para imprimir algo a la consola, hasta el propio archivo donde se escribe el código que corre el otro código, que 
 llama a más código, etc! 
 <br/><br/>
@@ -158,18 +158,18 @@ archivo uno define el nombre y el cuerpo de una clase, método o variable. No ex
 lo que facilita el control de archivos, compilación JIT, y organización.
 <br/><br/>
 En Java, cada archivo define una clase cuyo nombre tiene que ser exactamente el mismo del archivo para que este sea 
-detectado por el compilador y manejado correctamente. <code><b>Si bien se pueden declarar clases adicionales 
+detectado por el compilador y manejado correctamente. <code>Si bien se pueden declarar clases adicionales 
 (como privadas) en el mismo archivo, esta práctica no se recomienda a menos que puedan ser implementadas como clases 
 internas.
-</b></code>
+</code>
 </p>
 <p>Con base en estos datos, surge la duda de entonces cómo realmente funciona el lenguaje, ya que si estamos 
 escribiendo una clase, ¿por qué puede correr un main que es un método dentro de una clase? No tenemos un programa 
 cliente para esta clase. 
 <br/><br/>
 Lo cierto es que, si bien no existe este programa cliente, una clase para que pueda ser ejecutada independientemente 
-de otros archivos, debe tener entre sus métodos un método con un prototipo singular <code><b>public static 
-void main(String[] args)</b></code>, el cual le dice al compilador que esta clase tiene un método main que puede ser 
+de otros archivos, debe tener entre sus métodos un método con un prototipo singular <code>public static 
+void main(String[] args)</code>, el cual le dice al compilador que esta clase tiene un método main que puede ser 
 llamado por él para correr el código contenido en este bloque.
 </p>
 <procedure>
@@ -180,7 +180,7 @@ existir un main</format></b></format></i>
 </procedure>
 <p>Adicionalmente, es importante destacar que todo lo que nosotros tomamos como un archivo header más en C++, tiene 
 su equivalente en una clase dentro de Java. Por ejemplo, el manejo de consola se realiza con la clase 
-<code><b>System</b></code>, dentro de la cual <code>.in, .out, .err </code> son instancias de <i>otras clases</i> 
+<code>System</code>, dentro de la cual <code>.in, .out, .err </code> son instancias de <i>otras clases</i> 
 que permiten al programa leer de y escribir hacia la consola. A lo largo del curso notaremos que casi todo en Java 
 requiere una clase específica o una combinación de varias.</p>
 
@@ -203,9 +203,9 @@ puede tomar una variable, efectivamente ayudando a reducir posibles errores de c
 <li><b><format color="CornFlowerBlue">Todas las variables deben llevar un tipo</format></b>: <p>Toda variable en 
 Java debe tener un tipo de dato asignado antes de su nombre, todo método debe tener un tipo de retorno antes de su 
 nombre y cada parámetro en la misma forma.<br/><br/>
-Esta regla se rompe únicamente si una variable se declara usando la keyword <code><b>var</b></code></p></li> 
+Esta regla se rompe únicamente si una variable se declara usando la keyword <code>var</code></p></li> 
 <li><b><format color="CornFlowerBlue">No existen las conversiones implícitas</format></b>: <p>En Java, cualquier 
-tipo de conversion se realiza a través de una conversion de tipo <code><b>(Tipo) variable</b></code>, similar a la 
+tipo de conversion se realiza a través de una conversion de tipo <code>(Tipo) variable</code>, similar a la 
 que se usa en C o en C++ base. Estas se deben declarar directamente en el lenguaje y pueden causar excepciones.
 <br/><br/>
 Esta regla se rompe únicamente si una variable se pasa de un tipo primitivo a un tipo envolvente.</p> 
@@ -256,9 +256,9 @@ primeros ejemplos de nuestro curso no es tan necesario tener estos conceptos en 
 
 ## Verbose Exceptions
 <p>Java es un lenguaje cuyo sistema se basa en dos grupos de excepciones claras, aquellas que son evaluadas 
-estaticamente y durante compilación por el compilador, llamadas  <code><b>Checked  Exceptions</b></code>, y aquellas 
+estaticamente y durante compilación por el compilador, llamadas  <code>Checked  Exceptions</code>, y aquellas 
 que no se revisan y 
-pueden desencadenar en problemas durante la ejecución, <code><b>Unchecked Exceptions</b></code><br/><br/>
+pueden desencadenar en problemas durante la ejecución, <code>Unchecked Exceptions</code><br/><br/>
 Mas adelante revisaremos a detalle el manejo de excepciones en Java, sus formatos y como identificarlas durante 
 ejecucion y escritura del código. No obstante, es importante notar que en Java los mensajes de error son 
 generalmente bastante descriptivos de las clases que se vieron afectadas por un error, y nos facilitan un análisis 

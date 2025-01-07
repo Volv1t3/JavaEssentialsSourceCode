@@ -21,14 +21,14 @@ incorporando al lenguaje y que me han parecido importantes para el curriculum de
 usuario accede a este, controlando inputs con base en iteraciones, controlando repeticiones de código, repeticiones de 
 menu, etc. Estas estructuras están diseñadas para controlar la manera en la que el programa se ejecuta y la manera 
 en la que diversos controles de repetición se ejecutan. En este grupo tenemos cuatro miembros 
-<code><b>Iteration-Based For Loop, Range-Based For (forEach) Loop, While Loop, Do-While Loop</b></code>
+<code>Iteration-Based For Loop, Range-Based For (forEach) Loop, While Loop, Do-While Loop</code>
 </p>
 
 ### Iteration-Based For Loop
 <p>La forma mas basica de un for loop que se estudia en C++ y que se replica en Java, recordemos que Java tomo 
 varias partes de C++ que fueron utiles y las implemento <i>as-is</i>. Entre estas estructuras se encontraba este 
 tipo de for loops, en las cuales el unico cambio significativo es la falta de un equivalente al 
-<code><b>std::size_t</b></code> que usualmente se toma como tipo de dato dentro de las variables contadoras en un for 
+<code>std::size_t</code> que usualmente se toma como tipo de dato dentro de las variables contadoras en un for 
 loop de C++. 
 <br/><br/>
 En cualquier otro aspecto es identico al for loop de C++, por tanto se establecen algunos ejemplos de este a 
@@ -37,7 +37,8 @@ continuacion.
 <procedure>
 <tabs>
 <tab title="For Loop Base I">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example{
@@ -55,7 +56,7 @@ public class example{
         }
     }
 }
-</code-block>
+```
 <p>La corrida de este codigo da como resultado un cuadrado de altura cinco lleno de asteriscos</p>
 <code-block lang="Markdown">
 *****
@@ -68,7 +69,8 @@ Process finished with exit code 0
 </code-block>
 </tab>
 <tab title="For Loop Base II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example {
@@ -87,7 +89,7 @@ public class example {
     }
 
 }
-</code-block>
+```
 <p>La corrida de este codigo imprime lo siguiente en consola</p>
 
 <code-block lang="Markdown">
@@ -101,7 +103,8 @@ Process finished with exit code 0
 </code-block>
 </tab>
 <tab title="For Loop Base III">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example {
@@ -124,7 +127,7 @@ public class example {
         }
     }
 }
-</code-block>
+```
 <p>La corrida de este codigo imprime lo siguiente en consola</p>
 
 <code-block lang="Markdown">
@@ -168,7 +171,8 @@ A continuacion se establecen ejemplos en base a arreglos de datos.
 <procedure>
 <tabs>
 <tab title="Range-Based For Loop I">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example{
@@ -206,7 +210,7 @@ public class example{
 
     }
 }
-</code-block>
+```
 <p>Al ejecutar este codigo se obtiene el siguiente output.</p>
 <code-block lang="Markdown">
 {0 ,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10 }
@@ -220,7 +224,8 @@ Process finished with exit code 0
 </code-block>
 </tab>
 <tab title="Range-Based For Loop II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example {
@@ -251,7 +256,7 @@ private static String[][] categorizedColors = {
     }
 
 }
-</code-block>
+```
 <p>Al correr este codigo se obtiene el siguiente resultado.</p>
 <code-block lang="Markdown">
 [Red, Blue, Green, Yellow]
@@ -263,7 +268,8 @@ Process finished with exit code 0
 </code-block>
 </tab>
 <tab title="Range-Based For Loop III">
-<code-block lang="Java">
+
+```Java
 package example;
 
 import java.util.ArrayList;
@@ -318,7 +324,7 @@ public class example {
     }
 
 }
-</code-block>
+```
 <p>Al correr este código se obtiene el siguiente resultado.</p>
 <code-block lang="Markdown">
 Impresion del ArrayList en Orden usando Range-Based For Loops : 
@@ -352,7 +358,8 @@ continuacion se establecen varios ejemplos de su utilizacion.
 <procedure>
 <tabs>
 <tab title="While Loop I">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example{
@@ -385,10 +392,13 @@ public class example{
     }
 
 }
-</code-block>
+```
+
 </tab>
 <tab title="While Loop II">
-<code-block lang="Java">
+
+```Java
+
 package example;
 
 public class example {
@@ -419,11 +429,14 @@ public class example {
 
 }
 
-</code-block>
+```
+
 
 </tab>
 <tab title="While Loop III">
-<code-block lang="Java">
+
+```Java
+
 package example;
 
 public class example{
@@ -444,7 +457,8 @@ public class example{
     }
 
 }
-</code-block>
+```
+
 </tab>
 
 </tabs>
@@ -457,7 +471,7 @@ formato en donde la condicion se revisa en un formato <i>check-at-least-once</i>
 se ejecuta por lo menos una vez independientemente si la condicion de parada se cumple desde un inicio o si se 
 modifica internamente.
 <br/><br/>
-Al igual que en C++, la <code><b>condicion de parada while</b></code> se escribe luego del corchete de cerrada del 
+Al igual que en C++, la <code>condicion de parada while</code> se escribe luego del corchete de cerrada del 
 bloque do, y siempre se termina con un punto y coma.
 <br/><br/>
 En este sentido, la utilidad de los do-while loops es clara en condiciones en donde nosotros debemos de realizar un 
@@ -466,14 +480,15 @@ analisis aunque sea una vez, como en el caso de <code>menus, interaccion con el 
 y salir cuando el usuario lo desee, o verificar la entrada de datos del usuario aunque sea una vez). 
 <br/><br/>
 Basados en las mismas reglas de scopes de variables, siempre es recomendable definir la variable cuya modificacion 
-se realiza dentro del <code><b>bloque do{}</b></code>, fuera del bloque en si, si esta variable se actualiza y se 
+se realiza dentro del <code>bloque do{}</code>, fuera del bloque en si, si esta variable se actualiza y se 
 utiliza para la comparativa while. A continuacion presentamos tres ejemplos de su uso, traducidos de los ejemplos de 
 D. Liang para C++ y algunos nuevos de interaccion con el usuario y menus.
 </p>
 <procedure>
 <tabs>
 <tab title="Do-While Loop I">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example {
@@ -526,10 +541,11 @@ public class example {
     }
 
 }
-</code-block>
+```
 </tab>
 <tab title="Do-While Loop II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 // Ejemplo de Interaccion con usuario a traves de un menu 
@@ -599,11 +615,12 @@ public class example {
 }
 
 }
-</code-block>
+```
 
 </tab>
 <tab title="Do-While Loop III">
-<code-block lang="Java">
+
+```Java
 package example;
 
 // Ejemplo de conexion entre While y Do-While 
@@ -644,7 +661,7 @@ public static void main(String[] args){
     }
   }
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -655,11 +672,11 @@ general el formato que se usa en Java cuando se trabaja con estas estructuras. E
 logco como if statements, if-elif-else statements, switch statements, y adicionalmente el operador ternario  if-else,
 son identicos, tanto en su implementacion, como mecanismo interno con C++ en el caso de Java.
 <br/><br/>
-La unica diferencia es que, si bien en C++ se asumia que <code><b>todos los valores mayores que cero eran un 
-verdadero y cero era falso</b></code> en java esta regla se cambia y <code><b>no se permite la evaluacion 
-de numeros como si fueran verdadero o falso</b></code>, estas estructuras siempre requieren de un objeto o Boolean o un 
+La unica diferencia es que, si bien en C++ se asumia que <code>todos los valores mayores que cero eran un 
+verdadero y cero era falso</code> en java esta regla se cambia y <code>no se permite la evaluacion 
+de numeros como si fueran verdadero o falso</code>, estas estructuras siempre requieren de un objeto o Boolean o un 
 primitivo boolean resultante de una evaluacion previa usando operadores relacionales u otros metodos de Java como 
-son <code><b>Comparator y Comparable</b></code>
+son <code>Comparator y Comparable</code>
 <br/><br/>
 Por su parte, la documentacion oficial de Java indica lo siguiente acerca de la utilizacion de booleanos en las 
 estructuras de control logico que ofrece.
@@ -674,8 +691,7 @@ or a compile-time error occurs.
 <p>De esta forma entonces, aunque podemos usar las mismas estructuras para organizar nuestro codigo y controlar el 
 flujo de nuestro programa, tambien tenemos que tener en cuenta que Java solo admite valores booleanos en sus 
 condicionales, limitando el codigo de C++ de ser usado directamente<br/><br/>
-
-Para entender estas estructuras, se mostraran varios ejemplos de los tres grupos grandes de estructuras de control, 
+Para entender estas estructuras, se mostraran varios ejemplos de los tres grupos grandes de estructuras de control,
 if statements, switch statements y ternary if statement.
 </p>
 
@@ -700,7 +716,8 @@ A continuacion se escriben varios ejemplos practicos de los <code>if-statements 
 <procedure>
 <tabs>
 <tab title="If Statements I">
-<code-block lang="Java">
+
+```Java
 package example;
 
 import java.util.Scanner;
@@ -762,10 +779,11 @@ public static void main(String[] args) {
         scanner.close();
     }
 }
-</code-block>
+```
 </tab>
 <tab title="If Statements II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class example {
@@ -792,10 +810,11 @@ public class example {
         }
     }
 }
-</code-block>
+```
 </tab>
 <tab title="If Statements III">
-<code-block lang="Java">
+
+```Java
 package example;
 
 import java.util.Scanner;
@@ -879,7 +898,7 @@ Scanner scanner = new Scanner(System.in);
         scanner.close();
     }
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -904,7 +923,8 @@ statement.</p>
 <procedure>
 <tabs>
 <tab title="Switch Statement I">
-<code-block lang="Java">
+
+```Java
 package example;
 import java.util.Scanner;
 
@@ -944,10 +964,11 @@ public class Example {
     }
 
 }
-</code-block>
+```
 </tab>
 <tab title="Switch Statement II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 import java.util.Scanner;
@@ -997,11 +1018,12 @@ Scanner scanner = new Scanner(System.in);
     }
 
 }
-</code-block>
+```
 </tab>
 <tab title="Switch Statement III">
 
-<code-block lang="Java">
+
+```Java
 package example;
 
 import java.util.Scanner;
@@ -1046,7 +1068,7 @@ public class Example {
     }
 
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -1072,7 +1094,8 @@ en alguna seccion se utilice este operador.
 <tabs>
 <tab title="Ternary If-Else Operator I">
 
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class Example {
@@ -1087,7 +1110,8 @@ public class Example {
 </code-block>
 </tab>
 <tab title="Ternary If-Else Operator II">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class Example {
@@ -1120,10 +1144,11 @@ public class Example {
 
 }
 
-</code-block>
+```
 </tab>
 <tab title="Ternary If-Else Operator III">
-<code-block lang="Java">
+
+```Java
 package example;
 
 public class Example {
@@ -1143,7 +1168,7 @@ public class Example {
 
 }
 
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>

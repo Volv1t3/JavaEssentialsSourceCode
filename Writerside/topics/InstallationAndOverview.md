@@ -55,49 +55,44 @@ Gracias al desarrollo previo por JetBrains para sus IDEs, especialmente aquellos
 <br/><br/>
 Independientemente del proceso que se siga, el curso trabajará con la versión de Java 21, una versión probada y estable que se usa en las clases de estructuras de datos actualmente.</p>
 <list style="decimal">
-<li> Una vez abierto el entorno, hacemos clic en <code><b>crear un nuevo proyecto</b></code>, o alternativamente en <code><b>File -> New -> Project</b></code>. Luego de entrar en esta pestaña, tendremos un diálogo que se parecerá a este:
-
-![DialogCreateNewProject.png](DialogCreateNewProject.png)
-
+<li> Una vez abierto el entorno, hacemos clic en <code>crear un nuevo proyecto</code>, o alternativamente en <code>File -> New -> Project</code>. Luego de entrar en esta pestaña, tendremos un diálogo que se parecerá a este:
+<img alt="DialogCreateNewProject.png" src="DialogCreateNewProject.png"/>
 Con este diálogo abierto, podemos configurar varias opciones de nuestro proyecto, o en su caso, si solo queremos
 descargar entornos, podemos dejar todo con los parámetros normales y modificar la sección de <b>JDK</b>.
 </li>
-<li> <p>La sección de <b>JDK</b>, como pudieron notar en mi caso, incluye ya un compilador de Amazon que tiene su propio SDK y la JVM de la distribución de Amazon para mi proyecto. En su caso, puede que aparezca sin ningún nombre o sin configuración.
+<li> <p>La sección de <b>JDK</b>, como pudieron notar en mi caso, incluye ya un compilador de Amazon que tiene su 
+propio SDK y la JVM de la distribución de Amazon para mi proyecto. En su caso, puede que aparezca sin ningún nombre o sin configuración.
 <br/>
 <br/>
-En el caso de no tener un JDK seleccionado, su descarga es tan fácil como <code><b>JDK -> Download JDK</b> </code>.
-
-![JDKDownloadJDK.png](JDKDownloadJDK.png)
-
+En el caso de no tener un JDK seleccionado, su descarga es tan fácil como <code>JDK -> Download JDK </code>.
+</p>
+<img alt="JDKDownloadJDK.png" src="JDKDownloadJDK.png"/>
+<p>
 Y una vez desplegado este menú, entrar en la sección indicada para descargar una versión de JDK que necesitemos. El menú
 es bastante intuitivo y permite seleccionar la versión, proveedor y la ubicación de descarga. En mi caso, siempre los
 dejo en la ubicación por defecto para que cualquier proyecto los pueda encontrar, y en momentos de migración de datos
-esto sea más fácil.
-</p>
+esto sea más fácil.</p>
 </li>
-<li>En la sección de <code><b>Download JDK</b></code>, seleccionamos los siguientes parámetros: <code><b>Version=21, Vendor= Amazon Corretto 21.0.5</b></code> y dejamos la ubicación de descarga en la normal del sistema, tal como se muestra en la imagen.
-
-![JDKDownloadPage.png](JDKDownloadPage.png)
+<li>En la sección de Download JDK, seleccionamos los siguientes parámetros: Version=21, Vendor= Amazon Corretto 21.0.
+5 y dejamos la ubicación de descarga en la normal del sistema, tal como se muestra en la imagen.
+<img alt="JDKDownloadPage.png" src="JDKDownloadPage.png"/>
 </li>
 </list>
 </tab>
 <tab title="Instalar JVM en un Proyecto Existente">
 <p>Si ya te adentraste dentro del entorno y aún no has instalado una JVM para tu proyecto, entonces puedes seguir los pasos detallados a continuación para su instalación.</p>
 <list style="decimal">
-<li> En la <b>esquina superior derecha</b>, hacemos clic izquierdo en el ícono de engranaje y buscamos la pestaña <code><b>Project Structure... o Estructura del Proyecto...</b></code>.
-
-![ProjectViewOne.png](ProjectViewOne.png)
+<li> En la <b>esquina superior derecha</b>, hacemos clic izquierdo en el ícono de engranaje y buscamos la pestaña <code>Project Structure... o Estructura del Proyecto...</code>.
+<img alt="ProjectViewOne.png" src="ProjectViewOne.png"/>
 </li>
-<li> Una vez dentro de este menú, en la primera pestaña encontraremos una opción titulada <code><b>Project</b></code>, donde uno de sus campos indica el SDK seleccionado en el sistema. En mi caso, como acabo de crear el proyecto, me aparece <b>NO SDK</b>.
-
-![ProjectViewThree.png](ProjectViewThree.png)
+<li> Una vez dentro de este menú, en la primera pestaña encontraremos una opción titulada <code>Project</code>, donde uno de sus campos indica el SDK seleccionado en el sistema. En mi caso, como acabo de crear el proyecto, me aparece <b>NO SDK</b>.
+<img alt="ProjectViewThree.png" src="ProjectViewThree.png"/>
 Una vez en esta sección, realizamos el procedimiento usado en la creación de un proyecto. Ingresamos rápidamente
-a <code><b>SDK -> Add SDK -> Download SDK </b></code> y seleccionamos los mismos parámetros para proveedor y versión (
+a <code>SDK -> Add SDK -> Download SDK </code> y seleccionamos los mismos parámetros para proveedor y versión (
 Java 21 (21.0.5), de Amazon Corretto).
-
-![ProjectViewFour.png](ProjectViewFour.png)
+<img alt="ProjectViewFour.png" src="ProjectViewFour.png"/>
 Una vez descargado, el proyecto se configurará con la versión actual del SDK, y las librerías incluidas aparecerán en la
-esquina inferior izquierda de nuestro entorno, bajo el nombre de <code><b>external libraries</b></code>.
+esquina inferior izquierda de nuestro entorno, bajo el nombre de <code>external libraries</code>.
 </li>
 </list>
 </tab>
@@ -116,16 +111,16 @@ El proceso de carga del proyecto es sencillo y requiere simplemente de descargar
 <tab title="Configuración del Material">
 <list style="decimal">
 <li>En primera instancia, si no te llegó el correo con los archivos a tu correo, puedes encontrar el archivo .zip con los documentos del curso en el siguiente link <a href="https://estudusfqedu-my.sharepoint.com/:u:/g/personal/sarellanoj_estud_usfq_edu_ec/EaVx9xPw99JNp70EHoQbmqkB5lsP1A4Fdcwh9oP0xim4Xw?e=DQvSIw">y descargarlos</a>.</li>
-<li>Una vez descargados los archivos y descomprimidos en una ubicación en tu computadora, puedes cargarlos en IntelliJ tanto desde la pestaña principal si no has creado ningún proyecto, o desde el entorno buscando la opción <code><b>File -> Open </b></code> y buscando la ubicación de los archivos. Luego de encontrarlos, simplemente los cargamos en el sistema y el proyecto debe configurarse casi automáticamente.<br/>
+<li>Una vez descargados los archivos y descomprimidos en una ubicación en tu computadora, puedes cargarlos en IntelliJ tanto desde la pestaña principal si no has creado ningún proyecto, o desde el entorno buscando la opción <code>File -> Open </code> y buscando la ubicación de los archivos. Luego de encontrarlos, simplemente los cargamos en el sistema y el proyecto debe configurarse casi automáticamente.<br/>
 <format color="OrangeRed">Puede que en esta sección el programa indique que el SDK no está configurado. Si ya lo descargaste, sigue los mismos pasos detallados en la sección anterior, solo que no descargues el entorno, selecciona uno de los autodetectados por el IDE.</format>
 </li>
-<li>Con el archivo cargado en nuestro sistema y el SDK configurado para nuestro proyecto, puede que te solicite cargar un <code><b>Proyecto Maven</b></code>. En esta sección <b>es importante que permitas al sistema cargar el proyecto Maven</b>. Esta es una manera de compartir y manejar automáticamente código en Java a través de un Build System parecido a los de C++. No es necesaria ninguna acción adicional por tu parte, solo permitir que cargue.
+<li>Con el archivo cargado en nuestro sistema y el SDK configurado para nuestro proyecto, puede que te solicite cargar un <code>Proyecto Maven</code>. En esta sección <b>es importante que permitas al sistema cargar el proyecto Maven</b>. Esta es una manera de compartir y manejar automáticamente código en Java a través de un Build System parecido a los de C++. No es necesaria ninguna acción adicional por tu parte, solo permitir que cargue.
 </li>
 </list>
 </tab>
 </tabs>
 </procedure>
-<p>Con el código cargado y el compilador configurado, podemos correr nuestro primer archivo de prueba <code><b>HelloJava.java</b></code>, el cual, además de introducir el formato de comentarios en el programa y los que se utilizarán en el curso, presenta un main fácil de correr que nos dará la información de nuestro compilador si este se configuró correctamente.
+<p>Con el código cargado y el compilador configurado, podemos correr nuestro primer archivo de prueba <code>HelloJava.java</code>, el cual, además de introducir el formato de comentarios en el programa y los que se utilizarán en el curso, presenta un main fácil de correr que nos dará la información de nuestro compilador si este se configuró correctamente.
 <br/><br/>
 Una corrida en mi sistema produce el siguiente output:</p>
 <procedure>

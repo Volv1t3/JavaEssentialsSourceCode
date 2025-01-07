@@ -46,7 +46,7 @@ En fin, discutir esto puede ser el tópico de una charla entera, pero en nuestro
     <p>En Java, el manejo de memoria está bloqueado por el sistema de ejecución, la JVM.
 Es decir, los programas en Java usualmente no trabajan con memoria preasignada como es el Stack, ya que la JVM utiliza memoria de tipo Heap para guardar casi todo lo que escribimos en Java.</p>
     </li> 
-    <li>En Java, además de su entorno de ejecución aislado de la memoria principal del computador, el lenguaje en sí cuenta con un <code><b>Garbage Collector</b></code> que se encarga de limpiar cualquier objeto sin uso, liberando memoria.</li>
+    <li>En Java, además de su entorno de ejecución aislado de la memoria principal del computador, el lenguaje en sí cuenta con un <code>Garbage Collector</code> que se encarga de limpiar cualquier objeto sin uso, liberando memoria.</li>
     </list></td>
 </tr>
 <tr>
@@ -54,7 +54,7 @@ Es decir, los programas en Java usualmente no trabajan con memoria preasignada c
     <td><list>
     <li>
     <p>C++ no es un lenguaje portable por naturaleza.
-Al ser un lenguaje compilado y al pasar por una etapa de <code><b>linking</b></code>, los programas de C++ forman un nexo con el sistema operativo en el formato de sus ejecutables.</p>
+Al ser un lenguaje compilado y al pasar por una etapa de <code>linking</code>, los programas de C++ forman un nexo con el sistema operativo en el formato de sus ejecutables.</p>
     </li>
     <li>
 <p>Como C++ depende de los ejecutables del sistema operativo en donde se corran, estos se vuelven inservibles en otro sistema, forzando a los usuarios a usar archivos intermedios <b>.o</b> para lograr una transferencia de información.</p></li>
@@ -63,8 +63,8 @@ Al ser un lenguaje compilado y al pasar por una etapa de <code><b>linking</b></c
     </td>
     <td>
     <list>
-    <li><p>Java, por defecto, es un lenguaje que tiene dos pasos: interpretación y compilación. Por tanto, los archivos de Java pueden ser compartidos en su etapa intermedia <code><b>(los archivos .class)</b></code>, los cuales pueden ser ejecutados por cualquier máquina virtual de Java (JVM) en cualquier sistema operativo.</p></li>
-    <li><p>Generalmente, a Java se le conoce como el <code><b>Compile Once - Run Anywhere</b></code> language, dado su facilidad para generar código intermedio, transferible y fácilmente interpretable.</p></li>
+    <li><p>Java, por defecto, es un lenguaje que tiene dos pasos: interpretación y compilación. Por tanto, los archivos de Java pueden ser compartidos en su etapa intermedia <code>(los archivos .class)</code>, los cuales pueden ser ejecutados por cualquier máquina virtual de Java (JVM) en cualquier sistema operativo.</p></li>
+    <li><p>Generalmente, a Java se le conoce como el <code>Compile Once - Run Anywhere</code> language, dado su facilidad para generar código intermedio, transferible y fácilmente interpretable.</p></li>
 </list>
     </td>
 </tr>
@@ -74,7 +74,7 @@ Al ser un lenguaje compilado y al pasar por una etapa de <code><b>linking</b></c
     <li><p>Aunque C++ cuenta con un gran número de librerías tanto de la comunidad, empresariales, así como algunas producidas por organizaciones, la forma de trabajar con estas es complicada.
 Puede ser que la librería te pida que compiles tú mismo su código, usando herramientas como <code>CMake o Make</code>, o puede proporcionarte los <code>.o</code>.
 </p></li>
-<li><p>Adicionalmente, el trabajo con build systems y package managers en C++ es complicado, ya que no existe un estándar más allá del sistema <code><b>VCPKG</b></code> de Microsoft, el cual no tiene un soporte tan amplio y funciona mucho mejor con sus entornos.
+<li><p>Adicionalmente, el trabajo con build systems y package managers en C++ es complicado, ya que no existe un estándar más allá del sistema <code>VCPKG</code> de Microsoft, el cual no tiene un soporte tan amplio y funciona mucho mejor con sus entornos.
 </p></li>
 </list></td>
 <td><list>
@@ -105,7 +105,7 @@ Los desarrolladores deben preocuparse explícitamente por asignar y liberar memo
 </list></td>
 <td><list>
 <li><p>
-En el caso de Java, su diseño original, y todas las mejoras que han venido desde sus primeras versiones, se han manejado en un formato de <code><b>programación orientada a objetos</b></code>.
+En el caso de Java, su diseño original, y todas las mejoras que han venido desde sus primeras versiones, se han manejado en un formato de <code>programación orientada a objetos</code>.
 En Java, es muy común ver que las clases que uno ve como básicas son objetos cuya estructura jerárquica es mucho más grande de lo que fácilmente se ve.
 </p></li>
 <li>Java en sí tiene todo un entorno de clases, keywords y componentes que facilitan increíblemente el desarrollo de aplicaciones orientadas a objetos, a través de sus jerarquías de clases, modularidad y compartimentalización de datos en nuestras clases.
@@ -117,14 +117,14 @@ A la hora de ver los archivos, notaremos que todo en Java es un objeto, y todo a
 <td>Origen</td>
 <td>C++ surge como una idea de un Superset de C, bajo el nombre original de "C with classes", este lenguaje estaba 
 basado fuertemente en Simula, un lenguaje de programación orientado a la simulación. El trabajo en C++, desarrollado 
-por <code><b>Bjarne Stroustrup </b></code> inicio en el año 1979 hasta el año 1985 cuando fue publicado como 
+por <code>Bjarne Stroustrup </code> inicio en el año 1979 hasta el año 1985 cuando fue publicado como 
 lenguaje comercial.
 </td>
 
 <td> Java surge como un proyecto interno en la empresa Sun Microsystems (cuyo aporte al lenguaje todavía se puede 
 notar en algunas librerías de Java!) con el objetivo de diseñar un lenguaje con la capacidad de ser utilizado en 
 dispositivos digitales como televisiones. El desarollo del lenguaje comenzó en el año 1991 por 
-<code><b>James Gosling, Mike Sheridan y Patrick Naughton</b></code>. Este equipo de ingenieros de Sun diseño en 
+<code>James Gosling, Mike Sheridan y Patrick Naughton</code>. Este equipo de ingenieros de Sun diseño en 
 primera instancia el lenguaje para sistemas embedidos, pero su  desarrollo fue tal que se convirtió en un lenguaje 
 multiparadigma rápidamente, teniendo su primera version en 1996.
 </td>

@@ -7,8 +7,9 @@
 
 
 ## Input y Output Hacia Archivos: Fundamentos
+
 <p>En Java trabajo con archivos se concentra directamente en las clases, interfaces (a discutirse en secciones 
-siguientes), y excepciones localizadas en el paquete <code><b>java.io.*</b></code>, en donde las estructuras 
+siguientes), y excepciones localizadas en el paquete</p> <code>java.io.*</code>, en donde las estructuras 
 jerarquicas internas muestran una clara diferencia entre dos tipos de archivos y su manejo. En primera instancia, 
 Java permite el manejo, y diferencia entre archivos binarios y archivos basados en texto.
 <br/><br/>
@@ -23,7 +24,6 @@ análisis cae fuera del marco de estudio de este curso.
 Dentro del contenido del curso, manejaremos en su mayoria los archivos de texto y los lectores y escritores de archivos
 con formato dentro de Java. Para esta sección, además, analizaremos algunas clases adicionales que nos ayudan en el 
 manejo de archivos así como la diferencia entre ambos tipos de I/O.
-</p>
 
 ### Binary I/O VS Text I/O
 <p> En Java se diferencia entre dos tipos de formatos para manejo de archivos externos, binary y text. Binary 
@@ -84,10 +84,10 @@ sistem operativo que usemos, informado solo de errores mediante excepciones como
 SecurityException</code>, errores que pueden ocurrir cuando tratamos de acceder a un archivo inexistente, o cuando 
 accedemos a nu archivo con privilegios de seguridad elevados, respectivamente.
 <br/> <br/>
-Dentro de estas clases adicionales que Java contiene se encuentran tres importantes que analizaremos 
-<code><b>File (java.nio.File.Files y java.io.File)</b>, <b>Path (java.nio.File)</b> y <b>Paths (java.nio.File)
-</b></code>.
-</p>
+Dentro de estas clases adicionales que Java contiene se encuentran tres importantes que analizaremos </p>
+<code> File (java.nio.File.Files y java.io.File), Path (java.nio.File) y Paths (java.nio.File)
+</code>.
+
 
 #### File Classes
 <p>En Java las clases <b>File de java.io y de java.nio</b> presentan varios metodos helper que nos permiten trabajar 
@@ -204,7 +204,8 @@ String rutaArchivo = System
 </code-block>
 </tab>
 <tab title="Java.nio.File.Files">
-<code-block lang="Java">
+
+```Java
 package io_examples;
 
 public class IOExampleTwo{
@@ -311,7 +312,7 @@ String rutaBase = System.getProperty("user.home");
 
 
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -395,7 +396,8 @@ archivos de la siguiente manera
 <procedure>
 <tabs>
 <tab title="Paths y Path en un mismo ejemplo">
-<code-block lang="Java">
+
+```Java
 package io_examples;
 // Ejemplo de uso de java.nio.file.Path
 // y java.nio.file.Paths
@@ -501,7 +503,7 @@ public class IOExampleThree {
     }
 
 }
-</code-block>
+```
 </tab>   
 </tabs>
 </procedure>
@@ -574,7 +576,7 @@ diseñado varias clases que nos permiten obviar el paso de conversion de binario
 
 #### Jerarquía Writer
 <p> En Java el manejo de archivos con formato se maneja a traves de dos jerarquías de clases distintas, 
-<code><b>Jerarquía Writer y Jerarquía Reader</b></code>, estas dos jerarquías de clases implementan capacidades 
+<code>Jerarquía Writer y Jerarquía Reader</code>, estas dos jerarquías de clases implementan capacidades 
 extra sobre los lectores de archivos binarios de Java y nos permiten convertir aisladamente los bits leidos por la 
 JVM directamente en texto (Strings en la mayoria de los casos) sin tener que hacer una conversión explícita a 
 través de un método.
@@ -617,7 +619,8 @@ en un solo  </li>
 <procedure>
 <tabs>
 <tab title="Jerarquía Writer">
-<code-block lang="Java">
+
+```Java
 package io_examples;
 
 
@@ -733,7 +736,7 @@ Path rutaArchivo = Paths.get("src/main/resources"
 
 }
 
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -748,8 +751,8 @@ como este ejemplo es sencillo, no se nota la necesidad de escribir varios saltos
 
 ![JerarquiaReader.png](JerarquiaReader.png)
 </procedure>
-<p> De las clases que se muestran en la jerarquía anterior, se analizarán en este curso 
-<code><b>StringReader</b>, <b>LineNumberReader</b> y <b>FileReader</b> </code> las cuales nos 
+<p> De las clases que se muestran en la jerarquía anterior, se analizarán en este curso </p>
+<code>StringReader, LineNumberReader y FileReader </code> <p> las cuales nos 
 van a permitir 
 demostrar la manera de leer archivos y las facilidades que presentan estas a la hora de analizar el contenido de 
 estos en nuestros programas. Pero como se realizó en la anterior sección, es importante analizar de manera breve los 
@@ -779,90 +782,101 @@ un BufferedReader. No se recomienda usar sola.
 <procedure>
 <tabs>
 <tab title="Jerarquía Reader">
-<code-block lang="Java">
-package io_example;
 
-import java.io.*;
-
-public class IOExampleFive {
-public static void main(String[] args) {
-// Ruta del archivo para lectura
-File archivo = new
-File(
-"src/main/resources/ejemplo_escritura.txt");
-
-        // Verificar si el archivo existe
-        if (!archivo.exists()) {
-            System.err.println("El archivo no existe: " + archivo.getAbsolutePath());
-            return;
-        }
-
-        // Leer el archivo usando las 
-        // diferentes clases Reader
-            //! Usamos FileReader
-        System.out.println(
-                     "=== Leyendo archivo con FileReader ===");
-        try (FileReader fileReader = new FileReader(archivo)) {
-            int c;
-            while ((c = fileReader.read()) != -1) {
-                System.out.print((char) c);
+```Java
+    package io_example;
+    
+    import java.io.*;
+    
+    public class IOExampleFive {
+    public static void main(String[] args) {
+    // Ruta del archivo para lectura
+    File archivo = new
+    File(
+    "src/main/resources/ejemplo_escritura.txt");
+    
+            // Verificar si el archivo existe
+            if (!archivo.exists()) {
+                System.err.println("El archivo no existe: " 
+                + archivo.getAbsolutePath());
+                return;
             }
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo con FileReader: " + e.getMessage());
-        }
-
-        System.out.println(
-                "\n\n=== Leyendo archivo con BufferedReader ===");
-        try (BufferedReader bufferedReader = 
-                new BufferedReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = bufferedReader.readLine()) != null) {
-                System.out.println(linea);
+    
+            // Leer el archivo usando las 
+            // diferentes clases Reader
+                //! Usamos FileReader
+            System.out.println(
+                         "=== Leyendo archivo con FileReader ===");
+            try (FileReader fileReader = new FileReader(archivo)) {
+                int c;
+                while ((c = fileReader.read()) != -1) {
+                    System.out.print((char) c);
+                }
+            } catch (IOException e) {
+                System.err.println(
+                "Error al leer el archivo con FileReader: " 
+                + e.getMessage());
             }
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo con BufferedReader: " + e.getMessage());
-        }
-
-        System.out.println(
-                "\n\n=== Leyendo archivo con StringReader ===");
-
-        try {
-            // Cargar todo el contenido 
-            // del archivo en un String usando 
-            // Files.readString
-            String contenido = Files.readString(archivo.toPath());
-            // Usar StringReader para leer el contenido y cargarlo en un BufferedReader
-            try (StringReader stringReader = 
-                    new StringReader(contenido);
-                 BufferedReader bufferedReader = 
-                    new BufferedReader(stringReader)) {
+    
+            System.out.println(
+                    "\n\n=== Leyendo archivo con BufferedReader ===");
+            try (BufferedReader bufferedReader = 
+                    new BufferedReader(new FileReader(archivo))) {
                 String linea;
-                while ((linea = 
-                        bufferedReader.readLine()) != null) {
+                while ((linea = bufferedReader.readLine()) != null) {
                     System.out.println(linea);
                 }
+            } catch (IOException e) {
+                System.err.println(
+                "Error al leer el archivo con BufferedReader: " 
+                + e.getMessage());
             }
-        } catch (IOException e) {
-            System.err.println("Error al leer" + 
-            " el archivo con StringReader: " 
-            + e.getMessage());
-        }
-
-        System.out.println("
-        \n\n=== Leyendo archivo con LineNumberReader ===");
-        try (LineNumberReader lineNumberReader = 
-            new LineNumberReader(new FileReader(archivo))) {
-            String linea;
-            while ((linea = lineNumberReader.readLine()) != null) {
-                System.out.printf("Línea %d: %s%n", lineNumberReader.getLineNumber(), linea);
+    
+            System.out.println(
+                    "\n\n=== Leyendo archivo con StringReader ===");
+    
+            try {
+                // Cargar todo el contenido 
+                // del archivo en un String usando 
+                // Files.readString
+                String contenido = Files.readString(archivo.toPath());
+                // Usar StringReader para leer el contenido y cargarlo en 
+                // un BufferedReader
+                try (StringReader stringReader = 
+                        new StringReader(contenido);
+                     BufferedReader bufferedReader = 
+                        new BufferedReader(stringReader)) {
+                    String linea;
+                    while ((linea = 
+                            bufferedReader.readLine()) != null) {
+                        System.out.println(linea);
+                    }
+                }
+            } catch (IOException e) {
+                System.err.println("Error al leer" + 
+                " el archivo con StringReader: " 
+                + e.getMessage());
             }
-        } catch (IOException e) {
-            System.err.println("Error al leer el archivo con LineNumberReader: " + e.getMessage());
+    
+            System.out.println("
+            \n\n=== Leyendo archivo con LineNumberReader ===");
+            try (LineNumberReader lineNumberReader = 
+                new LineNumberReader(new FileReader(archivo))) {
+                String linea;
+                while ((linea = lineNumberReader.readLine()) != null) {
+                    System.out.printf("Línea %d: %s%n", lineNumberReader
+                    .getLineNumber(), linea);
+                }
+            } catch (IOException e) {
+                System.err.println(
+                "Error al leer el archivo con LineNumberReader: " 
+                + e.getMessage());
+            }
         }
+    
     }
+```
 
-}
-</code-block>
 </tab>
 </tabs>
 </procedure>
@@ -911,7 +925,8 @@ Requiere que las clases de los objetos implementen <code>Serializable</code>. Se
 <procedure>
 <tabs>
 <tab title="Jerarquía OutputStream">
-<code-block lang="Java">
+
+```Java
 package io_example;
 
 import java.io.*;
@@ -920,11 +935,9 @@ import java.util.List;
 
 public class IOExampleSix {
     public static void main(String[] args) {
-
         // Ruta del archivo para escritura binaria
         File file = 
             new File("src/main/resources/binary_output.dat");
-
         try {
             // Crear el archivo si no existe
             if (!file.exists()) {
@@ -943,12 +956,10 @@ public class IOExampleSix {
             " el archivo: " + e.getMessage());
             return;
         }
-
         // Escritura de datos binarios usando 
         // diferentes tipos de OutputStreams
         System.out.println(
         "\n=== Escribiendo datos con diferentes Writers ===");
-
         // 1. Escribir bytes directamente con FileOutputStream
         try (FileOutputStream fos = new FileOutputStream(file)) {
             fos.write(
@@ -961,7 +972,6 @@ public class IOExampleSix {
             " con FileOutputStream: " 
             + e.getMessage());
         }
-
         // 2. Mejorar eficiencia con BufferedOutputStream
         try (BufferedOutputStream bos = 
                 new BufferedOutputStream(
@@ -975,7 +985,6 @@ public class IOExampleSix {
             + " con BufferedOutputStream: " 
             + e.getMessage());
         }
-
         // 3. Escritura de datos primitivos 
         // con DataOutputStream
         try (DataOutputStream dos = 
@@ -991,18 +1000,16 @@ public class IOExampleSix {
             System.err.println("Error al escribir"+
             " con DataOutputStream: " + e.getMessage());
         }
-
         // 4. Serialización de objetos 
         // con ObjectOutputStream
         try (ObjectOutputStream oos = 
                 new ObjectOutputStream(
                 new BufferedOutputStream(
                 new FileOutputStream(file, true)))) {
-            List<String> exampleList = new ArrayList<>();
+            List< String > exampleList = new ArrayList<>();
             exampleList.add("Elemento 1");
             exampleList.add("Elemento 2");
             exampleList.add("Elemento 3");
-
             // Serializar una lista de objetos
             oos.writeObject(exampleList); 
             System.out.println("Objeto serializado"+
@@ -1017,8 +1024,7 @@ public class IOExampleSix {
         "\n=== Escritura binaria completada ===");
     }
 }
-
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
@@ -1057,7 +1063,8 @@ Es muy útil para persistencia de datos o transmisión de objetos entre aplicaci
 <procedure>
 <tabs>
 <tab title="Jerarquía InputStream">
-<code-block lang="Java">
+
+```Java
 package io_example;
 
 import java.io.*;
@@ -1170,7 +1177,7 @@ public class IOExampleSeven {
             "\n=== Lectura binaria completada ===");
     }
 }
-</code-block>
+```
 </tab>
 </tabs>
 </procedure>
