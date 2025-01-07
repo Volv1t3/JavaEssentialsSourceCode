@@ -15,7 +15,7 @@ public abstract class Meeting implements Comparable<Meeting>{
 
     /*! Setters y Getters*/
     public void setI_MeetingID(Integer i_MeetingID) throws InvalidMeetingParameter{
-        if (i_MeetingID > 0){
+        if (i_MeetingID >= 0){
             this.i_MeetingID = i_MeetingID;
         }else {
             throw new InvalidMeetingParameter("El parametro ingresado en el metodo setI_MeetingID es incorrecto", new Throwable("Parametro negativo"));

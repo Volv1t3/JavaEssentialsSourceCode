@@ -34,16 +34,16 @@ public class PersonalMeeting extends Meeting{
         this.setI_MeetingType(e_MeetingType);
         this.setI_MeetingTime(e_MeetingTime);
         this.setI_WillAttend(false);
-        this.setI_MeetingAsigne("");
+        this.setI_MeetingAsigne("undefined");
     }
 
     public PersonalMeeting() throws InvalidMeetingParameter{
         this.setI_MeetingID(0);
-        this.setI_MeetingTitle("");
+        this.setI_MeetingTitle("undefined");
         this.setI_MeetingType(QuickTaskTypes.UNDEFINED);
         this.setI_MeetingTime(QuickTimeStamps.OCHO_AM);
         this.setI_WillAttend(false);
-        this.setI_MeetingAsigne("");
+        this.setI_MeetingAsigne("undefined");
     }
 
     /*! Setters y Getters*/
