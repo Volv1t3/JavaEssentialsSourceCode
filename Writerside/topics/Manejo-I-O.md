@@ -782,8 +782,7 @@ un BufferedReader. No se recomienda usar sola.
 <procedure>
 <tabs>
 <tab title="Jerarquía Reader">
-
-```Java
+<code-block lang="Java">
     package io_example;
     
     import java.io.*;
@@ -864,7 +863,7 @@ un BufferedReader. No se recomienda usar sola.
                 new LineNumberReader(new FileReader(archivo))) {
                 String linea;
                 while ((linea = lineNumberReader.readLine()) != null) {
-                    System.out.printf("Línea %d: %s%n", lineNumberReader
+                    System.out.printf("Línea %d: \s\n", lineNumberReader
                     .getLineNumber(), linea);
                 }
             } catch (IOException e) {
@@ -875,7 +874,7 @@ un BufferedReader. No se recomienda usar sola.
         }
     
     }
-```
+</code-block>
 
 </tab>
 </tabs>
