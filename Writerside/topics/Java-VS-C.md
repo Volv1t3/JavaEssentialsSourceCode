@@ -1,7 +1,7 @@
 # Java VS C++
 
 > Ahora que tenemos nuestro sistema configurado, es importante tomarnos un tiempo para detallar algunas distinciones
-> importantes que podemos hacer de Java en comparación con C++, un lenguaje que han estudiado hasta el momento. <br/>
+> relevantes que podemos hacer de Java en comparación con C++, un lenguaje que han estudiado hasta el momento. <br/>
 > En este sentido, este documento tiene el objetivo de detallar una serie de beneficios que Java tiene sobre C++ en el
 > desarrollo de software.
 
@@ -44,7 +44,7 @@ En fin, discutir esto puede ser el tópico de una charla entera, pero en nuestro
     <td><list>
     <li>
     <p>En Java, el manejo de memoria está bloqueado por el sistema de ejecución, la JVM.
-Es decir, los programas en Java usualmente no trabajan con memoria preasignada como es el Stack, ya que la JVM utiliza memoria de tipo Heap para guardar casi todo lo que escribimos en Java.</p>
+Es decir, los programas en Java usualmente no trabajan con memoria pre-asignada como es el Stack, ya que la JVM utiliza memoria de tipo Heap para guardar casi todo lo que escribimos en Java.</p>
     </li> 
     <li>En Java, además de su entorno de ejecución aislado de la memoria principal del computador, el lenguaje en sí cuenta con un <code>Garbage Collector</code> que se encarga de limpiar cualquier objeto sin uso, liberando memoria.</li>
     </list></td>
@@ -92,7 +92,7 @@ Programación Orientada a Objetos
 <td><list>
 <li>
 <p>
-C++ se destaca por ser un lenguaje multiparadigma que, además de la programación orientada a objetos, permite combinar estilos como la programación funcional y la programación estructurada.
+C++ se destaca por ser un lenguaje multi-paradigma que, además de la programación orientada a objetos, permite combinar estilos como la programación funcional y la programación estructurada.
 Sin embargo, esta flexibilidad en ocasiones puede introducir complejidad en los diseños orientados a objetos, ya que el lenguaje no obliga a los desarrolladores a seguir estrictamente este paradigma, lo que puede llevar a la mezcla de enfoques en un mismo proyecto.
 </p>
 </li>
@@ -108,7 +108,8 @@ Los desarrolladores deben preocuparse explícitamente por asignar y liberar memo
 En el caso de Java, su diseño original, y todas las mejoras que han venido desde sus primeras versiones, se han manejado en un formato de <code>programación orientada a objetos</code>.
 En Java, es muy común ver que las clases que uno ve como básicas son objetos cuya estructura jerárquica es mucho más grande de lo que fácilmente se ve.
 </p></li>
-<li>Java en sí tiene todo un entorno de clases, keywords y componentes que facilitan increíblemente el desarrollo de aplicaciones orientadas a objetos, a través de sus jerarquías de clases, modularidad y compartimentalización de datos en nuestras clases.
+<li>Java en sí tiene todo un entorno de clases, keywords y componentes que facilitan increíblemente el desarrollo de 
+aplicaciones orientadas a objetos, a través de sus jerarquías de clases, modularidad y compartimentalización de datos en nuestras clases.
 A la hora de ver los archivos, notaremos que todo en Java es un objeto, y todo archivo es un descriptor de una clase. 
 </li>
 </list></td>
@@ -123,7 +124,7 @@ lenguaje comercial.
 
 <td> Java surge como un proyecto interno en la empresa Sun Microsystems (cuyo aporte al lenguaje todavía se puede 
 notar en algunas librerías de Java!) con el objetivo de diseñar un lenguaje con la capacidad de ser utilizado en 
-dispositivos digitales como televisiones. El desarollo del lenguaje comenzó en el año 1991 por 
+dispositivos digitales como televisiones. El desarrollo del lenguaje comenzó en el año 1991 por 
 <code>James Gosling, Mike Sheridan y Patrick Naughton</code>. Este equipo de ingenieros de Sun diseño en 
 primera instancia el lenguaje para sistemas embedidos, pero su  desarrollo fue tal que se convirtió en un lenguaje 
 multiparadigma rápidamente, teniendo su primera version en 1996.

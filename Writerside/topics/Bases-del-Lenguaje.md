@@ -4,7 +4,7 @@
 > revisaremos en secciones posteriores.
 > En general, el contenido que analizaremos en esta sección es puramente
 > teórico hasta próximas secciones.
-> No obstante, es importante conocerlo ya que los IDEs de Java trabajan mucho con
+> No obstante, es importante conocerlo, ya que los IDEs de Java trabajan mucho con
 > estándares de Java conocidos.
 
 <p>Java es uno de los lenguajes con más aceptación e impacto a nivel mundial. Su aplicabilidad en la industria y el 

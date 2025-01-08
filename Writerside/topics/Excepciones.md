@@ -348,9 +348,8 @@ en cuenta algunos detalles de su implementación.
 <tab title="Reglas del bloque finally en un try-catch-finally block">
 <list style="alpha-lower">
 <li><b><format color="CornFlowerBlue">Orden de ejecución</format></b>: Siempre se ejecuta primero el bloque 
-<code>try</code>, este puede terminar o lanzar una excepción. Si se lanza una excepción, esta pasa a un <code>bloque 
-catch</code>
-Si este bloque catch logra frenar la excepción entonces el bloque finally se ejecuta. Si no lo logra, el bloque 
+<code>try</code>, este puede terminar o lanzar una excepción. Si se lanza una excepción, esta pasa a un <code> bloque 
+catch</code> Si este bloque catch logra frenar la excepción entonces el bloque finally se ejecuta. Si no lo logra, el bloque 
 finally igual se ejecuta solo que el programa termina abruptamente.
 <br/>
 En este sentido, el bloque finally no se adhiere a las normás de <code>excepción sin manejo -> programa termina 
@@ -398,13 +397,15 @@ public class ExceptionExampleFour{
         } catch (FileNotFoundException fileNotFoundException) {
             // Capturamos la excepción cuando el archivo 
             // no es encontrado
-            System.out.println("Error: El archivo no fue encontrado.");
+            System.out.println(
+            "Error: El archivo no fue encontrado.");
             System.out.println(fileNotFoundException.getMessage());
         } finally {
             // Cerramos el scanner si fue inicializado correctamente
             if (scanner != null) {
                 scanner.close();
-                System.out.println("Recurso Scanner cerrado correctamente.");
+                System.out.println(
+                "Recurso Scanner cerrado correctamente.");
             }
         }
     }
@@ -430,21 +431,30 @@ public class ExceptionExampleFive{
                 int counter = 0;
                 while (counter < numOfLines){
                     if (fileScanner.hasNextLine()){
-                        System.out.println("Linea Leida por el Scanner [" + counter + "] : " + fileScanner.nextLine());
+                        System.out.println(
+                        "Linea Leida por el Scanner"+ 
+                        " [" + counter + "] : " 
+                        + fileScanner.nextLine());
                         counter++;
                     }
                     else{
-                        System.out.println(Colorizer.colorWithCyanLetters("Error: No hay más lineas para leer"));
+                        System.out.println(
+                        Colorizer.colorWithCyanLetters(
+                        "Error: No hay más lineas para leer"));
                         break;
                     }
                 }
             }catch (FileNotFoundException fileNotFoundException){
-                System.out.println(Colorizer.colorWithCyanLetters("Error: FileNotFoundException (archivo no encontrado) " +
-                        "fue lanzado en el método readFileAndPrintLines. Solucionado con un catch"));
-                ExceptionsPartOne.extractorDeInformacionDeError(fileNotFoundException);
+                System.out.println(Colorizer.colorWithCyanLetters(
+                "Error: FileNotFoundException (archivo no encontrado)" 
+                + " fue lanzado en el método readFileAndPrintLines." + 
+                " Solucionado con un catch"));
+                ExceptionsPartOne
+                .extractorDeInformacionDeError(fileNotFoundException);
             }
             finally {
-                System.out.println(Colorizer.colorWithYellowLetters("El programa ha finalizado su ejecución, por tanto" +
+                System.out.println(Colorizer.colorWithYellowLetters(
+                "El programa ha finalizado su ejecución, por tanto" +
                         " el Scanner se ha cerrado"));
             }
         }
@@ -465,7 +475,8 @@ Scanner fileScanner = null; // Scanner to read file
         try {
             // Ask user for a file path
             inputScanner = new Scanner(System.in);
-            System.out.println("Por favor, introduzca la ruta del archivo:");
+            System.out.println(
+            "Por favor, introduzca la ruta del archivo:");
             String filePath = inputScanner.nextLine();
 
             // Create a File object
@@ -473,7 +484,9 @@ Scanner fileScanner = null; // Scanner to read file
 
             // Check if the file exists
             if (!file.exists()) {
-                throw new IllegalStateException("Error: El archivo no existe en la ruta proporcionada.");
+                throw new IllegalStateException(
+                "Error: El archivo no existe"+
+                " en la ruta proporcionada.");
             }
 
             // Open the file and read its contents
@@ -483,16 +496,22 @@ Scanner fileScanner = null; // Scanner to read file
                 System.out.println(fileScanner.nextLine());
             }
         } catch (IllegalStateException illegalStateException) {
-            System.out.println("Error: " + illegalStateException.getMessage());
+            System.out.println(
+            "Error: " + illegalStateException.getMessage());
         } catch (FileNotFoundException fileNotFoundException) {
-            System.out.println("Error: No se pudo abrir el archivo. excepción encontrada: ");
+            System.out.println(
+            "Error: No se pudo abrir el archivo. "+
+            " excepción encontrada: ");
             System.out.println(fileNotFoundException.getMessage());
         } catch (NoSuchElementException noSuchElementException) {
-            System.out.println("Error: No se pudo leer nada por consola. excepción encontrada: ");
+            System.out.println(
+            "Error: No se pudo leer nada por consola." + 
+            " excepción encontrada: ");
             System.out.println(noSuchElementException.getMessage());
         } catch(SecurityException securityException){
-            System.out.println("Error: No se pudo acceder al archivo. excepción encontrada: ");
-            System.out.println(securityException.getMessage());
+           System.out.println("Error: No se pudo acceder al archivo."+ 
+           " excepción encontrada: ");
+           System.out.println(securityException.getMessage());
         } catch (RuntimeException e) {
             System.out.println("Error: excepción encontrada: ");
             System.out.println(e.getMessage());
@@ -503,7 +522,8 @@ Scanner fileScanner = null; // Scanner to read file
             }
             if (fileScanner != null) {
                 fileScanner.close();
-                System.out.println("Recurso Scanner cerrado correctamente.");
+                System.out.println(
+                "Recurso Scanner cerrado correctamente.");
             }
         }
     }
@@ -662,10 +682,14 @@ File folder = new File(folderPath);
                      Arrays.stream(Objects.
                              requireNonNull(folder.listFiles()))) { 
                     System.out.println("Archivos en la carpeta:");
-                    filesStream.forEach(file -> System.out.println(file.getName()));
+                    filesStream
+                    .forEach(file -> 
+                    System.out.println(file.getName()));
                 } catch (SecurityException securityException) {
-                    System.out.println("Error: Permisos insuficientes " +
-                            "para acceder a la carpeta. Excepción capturada:");
+                    System.out.println("Error:" + 
+                    " Permisos insuficientes " 
+                    +"para acceder a la carpeta. "+
+                    " Excepción capturada:");
                     System.out.println(
                             securityException.getMessage());
                 } catch (RuntimeException runtimeException) {
@@ -680,10 +704,12 @@ File folder = new File(folderPath);
                         "válida o no existe.");
             }
         } catch (IllegalStateException illegalStateException) {
-            System.out.println("Error: Excepción de estado ilegal capturada:");
+            System.out.println(
+            "Error: Excepción de estado ilegal capturada:");
             System.out.println(illegalStateException.getMessage());
         } catch (RuntimeException runtimeException) {
-            System.out.println("Error: Excepción inesperada capturada:");
+            System.out.println(
+            "Error: Excepción inesperada capturada:");
             System.out.println(runtimeException.getMessage());
         }
 

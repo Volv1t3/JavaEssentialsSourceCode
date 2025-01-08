@@ -1,9 +1,10 @@
 # Manejo I/O
 
->Conociendo la forma de trabajar con excepciones, con bloques de codigo cuyos metodos pueden lanzar excepciones, e 
-> inclusive bloques de codigo cuyo formato permite al programa manejar la creacion de recursos para su utilizacion 
-> en Java. Estamos casi al final de los aspectos mas importantes y esenciales de Java, ahora nos queda en esta 
-> seccion revisar el manejo de archivos.
+>Conociendo la forma de trabajar con excepciones, con bloques de código cuyos métodos pueden lanzar excepciones, e 
+> inclusive bloques de código cuyo formato permite al programa manejar la creación de recursos para su utilización 
+> en Java. 
+> Estamos casi al final de los aspectos más importantes y esenciales de Java, ahora nos queda en esta 
+> sección revisar el manejo de archivos.
 
 
 ## Input y Output Hacia Archivos: Fundamentos
@@ -21,7 +22,7 @@ corresponde a todo archivo con un formato específico, por ejemplo aquellos deri
 base, pero siempre hay que recalcar que existen librerías específicas para el trabajo con estos archivos cuyo 
 análisis cae fuera del marco de estudio de este curso.
 <br/> <br/>
-Dentro del contenido del curso, manejaremos en su mayoria los archivos de texto y los lectores y escritores de archivos
+Dentro del contenido del curso, manejaremos en su mayoría los archivos de texto y los lectores y escritores de archivos
 con formato dentro de Java. Para esta sección, además, analizaremos algunas clases adicionales que nos ayudan en el 
 manejo de archivos así como la diferencia entre ambos tipos de I/O.
 
@@ -30,7 +31,8 @@ manejo de archivos así como la diferencia entre ambos tipos de I/O.
 corresponde a aquellos archivos cuyo formato interno, encoding, y en general contenidos, no pueden ser comprendidos 
 fácilmente por un lector de archivos como Notas, porque contiene códigos de bits cuya estructura no se puede 
 traducir directamente hacia ASCII. Podemos pensar en este grupo de igual forma que se trabaja en consola. Los 
-caracteres ASCII son imprimibles tanto en código como en consola, pero cuando los códigos de bits o valores numéricos representativos de un caracter, no están dentro del código ASCII, podemos notar que la consola imprime 
+caracteres ASCII son imprimibles tanto en código como en consola, pero cuando los códigos de bits o valores numéricos representativos de un 
+caracter, no están dentro del código ASCII, podemos notar que la consola imprime 
 caracteres erróneos, o inclusive sin sentido. 
 <br/> <br/>
 En este sentido, el binary IO que nosotros trabajamos tiene una separación clara de los archivos con formato 
@@ -90,7 +92,7 @@ Dentro de estas clases adicionales que Java contiene se encuentran tres importan
 
 
 #### File Classes
-<p>En Java las clases <b>File de java.io y de java.nio</b> presentan varios metodos helper que nos permiten trabajar 
+<p>En Java las clases <b>File de java.io y de java.nio</b> presentan varios métodos helper que nos permiten trabajar 
 con archivos y conocer sobre sus datos internos. Por ejemplo, la clase <b>File de java.io</b> incluye métodos útiles 
 para determinar si un archivo puede ser ejecutado, si puede ser escrito, si es directorio, permite crear archivos 
 temporales, nuevos archivos, etc.
@@ -99,7 +101,7 @@ Sin lugar a duda es una clase util para arrancar con el manejo de archivos, y si
 de mucha utilidad a la hora de analizar archivos del usuario o para crear aplicaciones que manejen archivos en 
 tiempo real.
 <br/><br/>
-En contraste la clase <b>Files de java.nio</b>, presenta varios metodos nuevos para trabajar con streams de 
+En contraste la clase <b>Files de java.nio</b>, presenta varios métodos nuevos para trabajar con streams de 
 informacion y de directorios, contiene en su totalidad métodos públicos estáticos que permiten manejar tanto 
 archivos, como directorios en Java para su posterior análisis.
 <br/><br/>
@@ -249,7 +251,8 @@ String rutaBase = System.getProperty("user.home");
             }
 
             // Crear un directorio de prueba dentro del path base
-            crearDirectorio(Paths.get(rutaBase + "/nuevo_directorio"));
+            crearDirectorio(
+                        Paths.get(rutaBase + "/nuevo_directorio"));
 
         } catch (IOException e) {
             System.err.println("Ocurrió un error: " + e.getMessage());
@@ -260,12 +263,17 @@ String rutaBase = System.getProperty("user.home");
     // Listar los archivos y directorios dentro de un directorio dado
     public static void listarArchivosDirectorio(Path directorio) {
         try (Stream<Path> paths = Files.list(directorio)) {
-            System.out.println("Contenido del directorio: " + directorio.getFileName());
+            System.out.println("Contenido del directorio: " 
+            + directorio.getFileName());
             paths.forEach(path -> {
-                System.out.println((Files.isDirectory(path) ? "[Directorio] " : "[Archivo] ") + path.getFileName());
+                System.out.println((Files.isDirectory(path) 
+                ? "[Directorio] " : "[Archivo] ") 
+                + path.getFileName());
             });
         } catch (IOException e) {
-            System.err.println("Error al listar el contenido del directorio: " + e.getMessage());
+            System.err.println(
+            "Error al listar el contenido del directorio: " 
+            + e.getMessage());
         }
     }
 
@@ -282,7 +290,8 @@ String rutaBase = System.getProperty("user.home");
     }
 
     // Renombrar un archivo o directorio
-    public static void renombrarArchivo(Path archivo, String nuevoNombre) {
+    public static void renombrarArchivo
+                (Path archivo, String nuevoNombre) {
         try {
             Path nuevoPath = archivo
                     .resolveSibling(nuevoNombre);
@@ -317,9 +326,9 @@ String rutaBase = System.getProperty("user.home");
 </tabs>
 </procedure>
 <p>Luego de haber revisado estos dos bloques de código, la diferencia entre ambos recae en sus métodos y en la forma 
-de trabajo de estos en varios métodos. Generalmente la forma de trabajo de Java.io.File es mucho mas simple y al ser 
+de trabajo de estos en varios métodos. Generalmente, la forma de trabajo de Java.io.File es mucho mas simple y al ser 
 una clase con métodos básicos, puede ser un poco limitante a la hora de adentrarse en proyectos grandes de análisis 
-y manejo de archivos. Por otra parte, la clase Java.nio.File.Files presenta métodos mucho mas seguros y complejos, 
+y manejo de archivos. Por otra parte, la clase Java.nio.File.Files presenta métodos mucho más seguros y complejos, 
 con excepciones cuando algo sucede incorrectamente, en lugar de booleanos como maneja Java.io.Files.
 <br/><br/>
 Al final la decision con respecto a usar uno o el otro puede ser visto en la siguiente tabla comparativa.
@@ -372,9 +381,9 @@ Al final la decision con respecto a usar uno o el otro puede ser visto en la sig
             <td>Acceso avanzado a metadatos mediante <code>Files.getAttribute()</code>, soporta diversos atributos personalizados.</td>
         </tr>
         <tr>
-            <td>Seguridad en entornos multihilo</td>
+            <td>Seguridad en entornos multi-hilo</td>
             <td>No es seguro para hilos.</td>
-            <td>Al utilizar <code>Path</code> y operaciones modernas, es más seguro para entornos multihilo.</td>
+            <td>Al utilizar <code>Path</code> y operaciones modernas, es más seguro para entornos multi-hilo.</td>
         </tr>
     </table>
 </procedure>
@@ -384,9 +393,10 @@ usadas para representar direcciones de archivos en el sistema de Java.
 </p>
 
 #### Path Classes
-<p> En el entorno de Java la clase Path (Java.nio.File.Path) y la clase Paths (java.nio.File.Paths), son clases que se utilizan para ubicar un archivo dentro del sistema de archivos manejado por el sistem operativo donde se ejecute el código, esto entonces garantiza que las direcciones sean independientes del separador de archivos por ejemplo, o si el sistema reconoce una estructura de UNIX/Windows o Linux. 
+<p> En el entorno de Java la clase Path (Java.nio.File.Path) y la clase Paths (java.nio.File.Paths), son clases que se utilizan para ubicar un archivo dentro del sistema de archivos manejado por 
+el sistema operativo donde se ejecute el código, esto entonces garantiza que las direcciones sean independientes del separador de archivos por ejemplo, o si el sistema reconoce una estructura de UNIX/Windows o Linux. 
 <br/><br/>
-De esta manera, logramos tener un codigo cuyo mecanismo de trabajo abstrae la forma en la que se manejan los archivo 
+De esta manera, logramos tener un código cuyo mecanismo de trabajo abstrae la forma en la que se manejan los archivo 
 dentro del sistema operativo. Asi, reducimos la posibilidad de error al tratar de formar direcciones de archivos 
 manualmente como se hacia con tipo String.
 <br/><br/>
@@ -507,12 +517,12 @@ public class IOExampleThree {
 </tab>   
 </tabs>
 </procedure>
-<p>Como se puede notar, el trabajo con un sistema mucho mas robusto como es Java.nio.Path es sencillo y provee de un 
+<p>Como se puede notar, el trabajo con un sistema mucho más robusto como es Java.nio.Path es sencillo y provee de un 
 mecanismo unido con Paths para trabajar con direcciones sencillamente dentro del sistema, permitiendo formar 
 direcciones en el sistema sin tener en cuenta los separadores del sistema que pueden causar problemas al buscar 
 archivos. 
 <br/><br/>
-Para cerrar esta seccion interna, la siguiente tabla compara estas estructuras junto con el mecanismo de la clase 
+Para cerrar esta sección interna, la siguiente tabla compara estas estructuras junto con el mecanismo de la clase 
 Java.io.File que usaba strings para representar direcciones de archivos.
 </p>
 <procedure>
@@ -566,7 +576,7 @@ Java.io.File que usaba strings para representar direcciones de archivos.
 </procedure>
 
 <p>Con esta breve vista a las clases helper que tiene Java para el manejo de archivos, podemos pasar a analizar los 
-metodos de lectura y escritura de archivos, tanto binario como en formato de texto</p>
+métodos de lectura y escritura de archivos, tanto binario como en formato de texto</p>
 
 ## Input y Output Hacia Archivos: Métodos de trabajo
 
@@ -575,14 +585,14 @@ metodos de lectura y escritura de archivos, tanto binario como en formato de tex
 diseñado varias clases que nos permiten obviar el paso de conversion de binario (ya que todo archivo está guardado en binario) hacia Strings. De esta forma, para este tipo de archivos Java presenta una jerarquía de clases completa que nos permite manejar archivos de texto fácilmente y con ayudas extras detrás en el sistema. </p>
 
 #### Jerarquía Writer
-<p> En Java el manejo de archivos con formato se maneja a traves de dos jerarquías de clases distintas, 
+<p> En Java el manejo de archivos con formato se maneja a través de dos jerarquías de clases distintas, 
 <code>Jerarquía Writer y Jerarquía Reader</code>, estas dos jerarquías de clases implementan capacidades 
-extra sobre los lectores de archivos binarios de Java y nos permiten convertir aisladamente los bits leidos por la 
-JVM directamente en texto (Strings en la mayoria de los casos) sin tener que hacer una conversión explícita a 
+extra sobre los lectores de archivos binarios de Java y nos permiten convertir aisladamente los bits leídos por la 
+JVM directamente en texto (Strings en la mayoría de los casos) sin tener que hacer una conversión explícita a 
 través de un método.
 <br/><br/>
 En esta primera instancia, analizaremos la jerarquía de clases Writer, la cual incluye varios escritores a archivos. 
-La siguiente imagen muestra la jeraquía en su tamaño general, aunque de estas clases (por la extensión del curso), 
+La siguiente imagen muestra la jerarquía en su tamaño general, aunque de estas clases (por la extensión del curso), 
 no podamos revisar todos.
 </p>
 <procedure>
@@ -752,7 +762,7 @@ como este ejemplo es sencillo, no se nota la necesidad de escribir varios saltos
 ![JerarquiaReader.png](JerarquiaReader.png)
 </procedure>
 <p> De las clases que se muestran en la jerarquía anterior, se analizarán en este curso </p>
-<code>StringReader, LineNumberReader y FileReader </code> <p> las cuales nos 
+<code>StringReader, LineNumberReader y FileReader </code> <p>, las cuales nos 
 van a permitir 
 demostrar la manera de leer archivos y las facilidades que presentan estas a la hora de analizar el contenido de 
 estos en nuestros programas. Pero como se realizó en la anterior sección, es importante analizar de manera breve los 
@@ -920,7 +930,7 @@ Requiere que las clases de los objetos implementen <code>Serializable</code>. Se
 <code>FileOutputStream</code>.
 </li>
 </list>
-<p> Una vez analizado este tipo de archivos, podemos revisar un poco de codigo para estos tipos de escritores de archivos </p>
+<p> Una vez analizado este tipo de archivos, podemos revisar un poco de código para estos tipos de escritores de archivos </p>
 <procedure>
 <tabs>
 <tab title="Jerarquía OutputStream">
@@ -992,7 +1002,8 @@ public class IOExampleSix {
                     new FileOutputStream(file, true)))) {
             dos.writeInt(42); // Un entero
             dos.writeDouble(3.14159); // Un número flotante
-            dos.writeUTF("Texto a través de DataOutputStream.\n"); // Una cadena
+            // Una cadena
+            dos.writeUTF("Texto a través de DataOutputStream.\n"); 
             System.out.println("Datos primitivos" + 
             " escritos con DataOutputStream.");
         } catch (IOException e) {
@@ -1029,7 +1040,7 @@ public class IOExampleSix {
 </procedure>
 
 #### Jerarquía InputStream
-<p> La siguiente jerarquía, y la ultima de nuestro análisis de las bases del manejo de archivos en Java es la jerarquía InputStream, la cual se usa para leer archivos de tipo binario. Las siguientes son las principales clases que se usan en esta jerarquía </p>
+<p> La siguiente jerarquía, y la última de nuestro análisis de las bases del manejo de archivos en Java es la jerarquía InputStream, la cual se usa para leer archivos de tipo binario. Las siguientes son las principales clases que se usan en esta jerarquía </p>
 <list columns="2">
 <li><b><format color="CornFlowerBlue">FileInputStream</format></b>: Clase para leer datos binarios directamente desde un archivo, byte por byte.
 <br/>
@@ -1049,7 +1060,7 @@ Típicamente se combina con un flujo subyacente como <code>FileInputStream</code
 <br/>
 Útil para leer datos que fueron escritos usando un <code>DataOutputStream</code>.
 </li>
-<li><b><format color="CornFlowerBlue">ObjectInputStream</format></b>: Clase que permite deserializar objetos previamente escritos en un flujo binario.
+<li><b><format color="CornFlowerBlue">ObjectInputStream</format></b>: Clase que permite de-serializar objetos previamente escritos en un flujo binario.
 <br/>
 Lee y reconstruye objetos que fueron serializados usando <code>ObjectOutputStream</code>. 
 <br/>
@@ -1058,7 +1069,7 @@ Requiere que las clases de los objetos implementen <code>Serializable</code>.
 Es muy útil para persistencia de datos o transmisión de objetos entre aplicaciones.
 </li>
 </list>
-<p> Las clases mencionadas anteriormente nos permiten desarollar el siguiente ejemplo </p>
+<p> Las clases mencionadas anteriormente nos permiten desarrollar el siguiente ejemplo </p>
 <procedure>
 <tabs>
 <tab title="Jerarquía InputStream">
@@ -1105,7 +1116,8 @@ public class IOExampleSeven {
         }
 
         // 2. Mejorar eficiencia con BufferedInputStream
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file))) {
+        try (BufferedInputStream bis = new BufferedInputStream(
+                                    new FileInputStream(file))) {
             System.out.println(
                 "\n> Leyendo datos" + 
                     " con BufferedInputStream:");
@@ -1113,7 +1125,8 @@ public class IOExampleSeven {
             while ((data = bis.read()) != -1) {
                 System.out.print((char) data);
             }
-            System.out.println("\nDatos leídos con BufferedInputStream.");
+            System.out.println(
+                    "\nDatos leídos con BufferedInputStream.");
         } catch (IOException e) {
             System.err.println(
             "Error al leer con BufferedInputStream: " 
@@ -1127,7 +1140,8 @@ public class IOExampleSeven {
                         new FileInputStream(file)))) {
             System.out.println("\n> Leyendo datos" + 
                     "primitivos con DataInputStream:");
-            while (dis.available() > 0) { // Verificar si hay datos disponibles
+            // Verificar si hay datos disponibles
+            while (dis.available() > 0) { 
                 int intValue = dis.readInt();
                 double doubleValue = dis.readDouble();
                 String stringValue = dis.readUTF();

@@ -25,14 +25,14 @@ en la que diversos controles de repetición se ejecutan. En este grupo tenemos c
 </p>
 
 ### Iteration-Based For Loop
-<p>La forma mas basica de un for loop que se estudia en C++ y que se replica en Java, recordemos que Java tomo 
-varias partes de C++ que fueron utiles y las implemento <i>as-is</i>. Entre estas estructuras se encontraba este 
-tipo de for loops, en las cuales el unico cambio significativo es la falta de un equivalente al 
+<p>La forma más básica de un for loop que se estudia en C++ y que se replica en Java, recordemos que Java tomo 
+varias partes de C++ que fueron útiles y las implemento <i>as-is</i>. Entre estas estructuras se encontraba este 
+tipo de for loops, en las cuales el único cambio significativo es la falta de un equivalente al 
 <code>std::size_t</code> que usualmente se toma como tipo de dato dentro de las variables contadoras en un for 
 loop de C++. 
 <br/><br/>
-En cualquier otro aspecto es identico al for loop de C++, por tanto se establecen algunos ejemplos de este a 
-continuacion.
+En cualquier otro aspecto es idéntico al for loop de C++, por tanto, se establecen algunos ejemplos de este a 
+continuación.
 </p>
 <procedure>
 <tabs>
@@ -44,9 +44,10 @@ package example;
 public class example{
 
     public static void main(String[] args){
-        //! Declaremos un For-Loop que imprima  un cuadrado en pantalla
+        //! Declaremos un For-Loop que imprima  
+        // un cuadrado en pantalla
         for(int i = 0 /*Variable Contadora*/;
-            i < 5     /*Condicion*/;
+            i < 5     /*condición*/;
             i++       /*Incremento*/)
         {
             for(int j = 0; j < 5; j++) { 
@@ -57,7 +58,7 @@ public class example{
     }
 }
 ```
-<p>La corrida de este codigo da como resultado un cuadrado de altura cinco lleno de asteriscos</p>
+<p>La corrida de este código da como resultado un cuadrado de altura cinco lleno de asteriscos</p>
 <code-block lang="Markdown">
 *****
 *****
@@ -90,7 +91,7 @@ public class example {
 
 }
 ```
-<p>La corrida de este codigo imprime lo siguiente en consola</p>
+<p>La corrida de este código imprime lo siguiente en consola</p>
 
 <code-block lang="Markdown">
 *****
@@ -116,7 +117,8 @@ public class example {
         for (int j = 1; j <= 9; j++)
           System.out.print("   " + j);
     
-        System.out.println("\n-----------------------------------------");
+        System.out.println(
+        "\n-----------------------------------------");
     
         for (int i = 1; i <= 9; i++) {
           System.out.print(i + " | ");
@@ -128,7 +130,7 @@ public class example {
     }
 }
 ```
-<p>La corrida de este codigo imprime lo siguiente en consola</p>
+<p>La corrida de este código imprime lo siguiente en consola</p>
 
 <code-block lang="Markdown">
            Tabla De Multiplicar
@@ -150,23 +152,23 @@ Process finished with exit code 0
 </tab>
 </tabs>
 </procedure>
-<p>Como podemos ver la manera de trabajar con un for loop de este estilo es identica a la de C++, no hay variaciones 
-en la declaracion de variables internas, es mas sigue la misma norma de poder utilizar variables declaradas fuera 
-del loop detro de este. Los mismos entornos de las variables con lo que hemos trabajado en C++ se mantiene, siendo 
+<p>Como podemos ver la manera de trabajar con un for loop de este estilo es idéntica a la de C++, no hay variaciones 
+en la declaración de variables internas, es más sigue la misma norma de poder utilizar variables declaradas fuera 
+del loop dentro de este. Los mismos entornos de las variables con lo que hemos trabajado en C++ se mantiene, siendo 
 este que variables dentro de un for loop o nested for loops no pueden ser usadas fuera de este scope, mientras que 
 variables dentro de un bloque for loop si pueden ser usadas dentro de este y sus nested for loops. 
 </p>
 
 ### Range-Based For (forEach) Loop
-<p>Esta version de los for loops incurre en un proceso muy diferente a comparacion de lo que se trabaja en C++. En 
+<p>Esta version de los for loops incurre en un proceso muy diferente a comparación de lo que se trabaja en C++. En 
 Java, las colecciones de datos como arreglos, listas, mapas, etc. (Los temas que van a ver en su clase de estructura 
-de datos!) tienen un componente adicional, un patron de diseno llamado iterador, es el mismo concepto de los 
+de datos!) tienen un componente adicional, un patron de diseño llamado Iterator, es el mismo concepto de los 
 iteradores de C++ solo que estos se esconden en este tipo de loops.
 <br/><br/>
-En Java, el patron de diseno del iterador se forza en cada implementacion de una estructura de datos, por tanto la 
-mayoria de estas, sin modificacion alguna o codigo extra permiten ser transversadas a traves de un range-based for.
+En Java, el patron de diseño del Iterator es forzado en cada implementación de una estructura de datos, por tanto, la 
+mayoría de estas, sin modificación alguna o código extra permiten ser transversadas a través de un range-based for.
 <br/><br/>
-A continuacion se establecen ejemplos en base a arreglos de datos.
+A continuación se establecen ejemplos con base en arreglos de datos.
 </p>
 <procedure>
 <tabs>
@@ -211,7 +213,7 @@ public class example{
     }
 }
 ```
-<p>Al ejecutar este codigo se obtiene el siguiente output.</p>
+<p>Al ejecutar este código se obtiene el siguiente output.</p>
 <code-block lang="Markdown">
 {0 ,1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10 }
 
@@ -257,7 +259,7 @@ private static String[][] categorizedColors = {
 
 }
 ```
-<p>Al correr este codigo se obtiene el siguiente resultado.</p>
+<p>Al correr este código se obtiene el siguiente resultado.</p>
 <code-block lang="Markdown">
 [Red, Blue, Green, Yellow]
 
@@ -291,7 +293,9 @@ public class example {
         names.add("Charlie");
         names.add("Diana");
 
-        System.out.print("Impresion del ArrayList en Orden usando Range-Based For Loops : ");
+        System.out.print(
+        "Impresion del ArrayList en Orden"+
+        " usando Range-Based For Loops : ");
         System.out.print("[");
         for (String name : names) {
             System.out.print(name + ", ");
@@ -305,14 +309,16 @@ public class example {
         numbers.push(30);
         numbers.push(40);
 
-        System.out.print("Impresion del Stack en Orden usando Range-Based For Loops : ");
+        System.out.print("Impresion del Stack en Orden usando"+
+        " Range-Based For Loops : ");
         System.out.print("[");
         for (int number : numbers) {
             System.out.print(number + ", ");
         }
         System.out.print("\b\b]\n");
 
-        System.out.print("Impresion del Stack en Orden usando Iteration-Based For Loops: ");
+        System.out.print("Impresion del Stack en Orden usando"+
+        " Iteration-Based For Loops: ");
         int stackSize = numbers.size();
         System.out.print("[");
         for (int i = stackSize - 1; i >= 0; i--) {
@@ -353,7 +359,7 @@ while loop sería más adecuado para:<br/>
 - Realizar operaciones mientras se cumplan múltiples condiciones simultáneas <br/>
 <br/><br/>
 La sintaxis simple, pero potente, del while loop permite una gran flexibilidad en el control de flujo del programa. A 
-continuacion se establecen varios ejemplos de su utilizacion.
+continuación se establecen varios ejemplos de su utilización.
 </p>
 <procedure>
 <tabs>
@@ -364,14 +370,18 @@ package example;
 
 public class example{
     
-    //! Snippet de la implementacion de un quicksort recursivo
-    private static <T extends Comparable<T>> void quicksort(T[] data, int first, int last) {
-        if (first >= last) return; // Base condition: if the segment has 0 or 1 elements, it's already sorted
+    //! Snippet de la implementación de un quicksort recursivo
+    private static <T extends Comparable<T>> 
+                void quicksort(T[] data, int first, int last) {
+        // Base condition: if the segment has 0 or 1 elements, 
+        // it's already sorted
+        if (first >= last) return; 
 
         int lower = first + 1;
         int upper = last;
 
-        swap(data, first, (first + last) / 2); // Move the pivot (middle element) to the first position
+        // Move the pivot (middle element) to the first position
+        swap(data, first, (first + last) / 2); 
         T bound = data[first]; // Pivot element
 
         // Partition the array
@@ -384,7 +394,8 @@ public class example{
                 lower++;
             }
         }
-        swap(data, upper, first); // Place the pivot in its correct position
+        // Place the pivot in its correct position
+        swap(data, upper, first); 
 
         // Recursively sort the partitions
         if (first < upper - 1) quicksort(data, first, upper - 1);
@@ -467,22 +478,22 @@ public class example{
 ### Do-While Loop
 <p>El formato de este tipo de loop es exactamente igual al de C++, la forma en la que lo escribimos, con sus 
 secciones, declaraciones y reglas de scope siguen siendo iguales. En general, esta estructura presenta el mismo 
-formato en donde la condicion se revisa en un formato <i>check-at-least-once</i>, en el que el codigo del do-while 
-se ejecuta por lo menos una vez independientemente si la condicion de parada se cumple desde un inicio o si se 
+formato en donde la condición se revisa en un formato <i>check-at-least-once</i>, en el que el código del do-while 
+se ejecuta por lo menos una vez independientemente si la condición de parada se cumple desde un inicio o si se 
 modifica internamente.
 <br/><br/>
-Al igual que en C++, la <code>condicion de parada while</code> se escribe luego del corchete de cerrada del 
+Al igual que en C++, la <code>condición de parada while</code> se escribe luego del corchete de cerrada del 
 bloque do, y siempre se termina con un punto y coma.
 <br/><br/>
 En este sentido, la utilidad de los do-while loops es clara en condiciones en donde nosotros debemos de realizar un 
-analisis aunque sea una vez, como en el caso de <code>menus, interaccion con el usuario, registro de valores, etc.
+análisis aunque sea una vez, como en el caso de <code>menus, interacción con el usuario, registro de valores, etc.
 </code>. Esto ya que los ejemplos mencionados pueden aunque sea una vez ejecutarse (e.j. imprimir el menu al inicio 
 y salir cuando el usuario lo desee, o verificar la entrada de datos del usuario aunque sea una vez). 
 <br/><br/>
-Basados en las mismas reglas de scopes de variables, siempre es recomendable definir la variable cuya modificacion 
-se realiza dentro del <code>bloque do{}</code>, fuera del bloque en si, si esta variable se actualiza y se 
-utiliza para la comparativa while. A continuacion presentamos tres ejemplos de su uso, traducidos de los ejemplos de 
-D. Liang para C++ y algunos nuevos de interaccion con el usuario y menus.
+Basados en las mismas reglas de scopes de variables, siempre es recomendable definir la variable cuya modificación 
+se realiza dentro del <code>bloque do{}</code>, fuera del bloque en sí, si esta variable se actualiza y se 
+utiliza para la comparativa while. A continuación presentamos tres ejemplos de su uso, traducidos de los ejemplos de 
+D. Liang para C++ y algunos nuevos de interacción con el usuario y menus.
 </p>
 <procedure>
 <tabs>
@@ -500,12 +511,14 @@ public class example {
         int amount_units_sold_total = 0;
         double amount_earnings = 0.0;
         do {
-            System.out.print("Ingrese el Producto que vendio (-1 para salir): ");
+            System.out.print(
+            "Ingrese el Producto que vendio (-1 para salir): ");
             item_sold = sc.nextInt();
             if (item_sold == -1) {
                 continue;
             } else {
-                System.out.print("Ingrese la cantidad de este producto vendido: ");
+                System.out.print(
+                "Ingrese la cantidad de este producto vendido: ");
                 amount_item_sold = sc.nextInt();
                 switch (item_sold) {
                     case 1:
@@ -529,13 +542,14 @@ public class example {
                         amount_units_sold_total += amount_item_sold;
                         break;
                     default:
-                        System.out.println("Input inválido detectado. " +
-                                "Deteniendo ejecución.");
+                        System.out.println("Input inválido detectado." 
+                        + " Deteniendo ejecución.");
                 }
             }
         } while (item_sold != -1);
 
-        System.out.println("Total units sold: " + amount_units_sold_total);
+        System.out.println("Total units sold: " 
+        + amount_units_sold_total);
         System.out.println("Total earnings: " + amount_earnings);
         sc.close();
     }
@@ -548,7 +562,7 @@ public class example {
 ```Java
 package example;
 
-// Ejemplo de Interaccion con usuario a traves de un menu 
+// Ejemplo de interacción con usuario a traves de un menu 
 // Usando revision de input
 
 public class example {
@@ -666,42 +680,42 @@ public static void main(String[] args){
 </tabs>
 </procedure>
 
-## Estructuras de Control Logico
-<p>Las estructuras de control logicas fueron en algunos ejemplos anteriores mostradas en su formato basico, y en 
+## Estructuras de Control Lógico
+<p>Las estructuras de control lógicas fueron en algunos ejemplos anteriores mostrados en su formato básico, y en 
 general el formato que se usa en Java cuando se trabaja con estas estructuras. En Java, las estructuras de control 
 logco como if statements, if-elif-else statements, switch statements, y adicionalmente el operador ternario  if-else,
-son identicos, tanto en su implementacion, como mecanismo interno con C++ en el caso de Java.
+son idénticos, tanto en su implementación, como mecanismo interno con C++ en el caso de Java.
 <br/><br/>
-La unica diferencia es que, si bien en C++ se asumia que <code>todos los valores mayores que cero eran un 
-verdadero y cero era falso</code> en java esta regla se cambia y <code>no se permite la evaluacion 
-de numeros como si fueran verdadero o falso</code>, estas estructuras siempre requieren de un objeto o Boolean o un 
-primitivo boolean resultante de una evaluacion previa usando operadores relacionales u otros metodos de Java como 
+La única diferencia es que, si bien en C++ se asumía que <code>todos los valores mayores que cero eran un 
+verdadero y cero era falso</code> en java esta regla se cambia y <code>no se permite la evaluación 
+de números como si fueran verdadero o falso</code>, estas estructuras siempre requieren de un objeto o Boolean o un 
+primitivo boolean resultante de una evaluación previa usando operadores relacionales u otros métodos de Java como 
 son <code>Comparator y Comparable</code>
 <br/><br/>
-Por su parte, la documentacion oficial de Java indica lo siguiente acerca de la utilizacion de booleanos en las 
-estructuras de control logico que ofrece.
+Por su parte, la documentación oficial de Java indica lo siguiente acerca de la utilización de booleanos en las 
+estructuras de control lógico que ofrece.
 </p>
 <procedure>
 <i>The if statement allows conditional execution of a statement or a conditional choice of two statements, execution 
 one or the other, but not both. [...] <br/><br/>
-The Expression [condition] must have a type <b>boolean or Boolean </b> [Boolean forces an autounboxing to be done], 
+The Expression [condition] must have a type <b>boolean or Boolean</b> [Boolean forces an auto-unboxing to be done], 
 or a compile-time error occurs.
 </i>
 </procedure>
-<p>De esta forma entonces, aunque podemos usar las mismas estructuras para organizar nuestro codigo y controlar el 
-flujo de nuestro programa, tambien tenemos que tener en cuenta que Java solo admite valores booleanos en sus 
-condicionales, limitando el codigo de C++ de ser usado directamente<br/><br/>
-Para entender estas estructuras, se mostraran varios ejemplos de los tres grupos grandes de estructuras de control,
+<p>De esta forma entonces, aunque podemos usar las mismas estructuras para organizar nuestro código y controlar el 
+flujo de nuestro programa, también tenemos que tener en cuenta que Java solo admite valores booleanos en sus 
+condicionales, limitando el código de C++ de ser usado directamente<br/><br/>
+Para entender estas estructuras, se mostrarán varios ejemplos de los tres grupos grandes de estructuras de control,
 if statements, switch statements y ternary if statement.
 </p>
 
 ### If Statements 
 <p>La base de la estructuras de control logico son los if statement, aquellos condicionales en los que se puede 
-seguir un camino (de una o varias opciones) u otro camino (de una o varios opciones), pero nunca dos al mismo tiempo. 
+seguir un camino (de una o varias opciones) u otro camino (de una o varias opciones), pero nunca dos al mismo tiempo. 
 <br/><br/>
-La principal utilidad de este tipo de estructuras es la ramificacion de codigo dependiendo de condiciones 
+La principal utilidad de este tipo de estructuras es la ramificacion de código dependiendo de condiciones 
 predefinidas por el programador y que deben ser cumplidas o por el programa, o por el usuario para que se ejecuten 
-ciertas partes del codigo en general. 
+ciertas partes del código en general. 
 <br/><br/>
 Por ejemplo, se pueden usar <code>if statements</code> para validar entradas del usuario, como 
 asegurarse de que la información ingresada cumpla con ciertas reglas específicas (e.g., un rango de valores numéricos 
@@ -710,7 +724,7 @@ programa basado en la configuración del usuario, o incluso para determinar el f
 situaciones lógicas como verificar si una conexión a una base de datos está activa o si un archivo existe antes de 
 proceder con una operación sobre él.
 <br/><br/>
-A continuacion se escriben varios ejemplos practicos de los <code>if-statements en Java</code>
+A continuación se escriben varios ejemplos practicos de los <code>if-statements en Java</code>
 </p>
 
 <procedure>
@@ -905,20 +919,20 @@ Scanner scanner = new Scanner(System.in);
 
 ### Switch Statements
 <p>Los condicionales de tipo switch, permiten al programa evaluar una expression, una variable o un ingreso de 
-usuario para varios casos generando diversas cadenas de ejecucion similares a un if-then-else statement pero con su 
-codigo mucho mas simplificado y organizado. <br/>
+usuario para varios casos generando diversas cadenas de ejecución similares a un if-then-else statement pero con su 
+código mucho más simplificado y organizado. <br/>
 <br/>
-En Java, este tipo de estructuras se amplia con la capacidad de analizar tanto numeros, como enumeraciones, como 
-caracteres asi como cadenas de texto completas. Esta funcionalidad anadida amplia el repertorio de posibles casos de 
-uso de los switch statements ya que podemos hacer revisiones de tipos de datos que en C++ estan limitados a enteros 
+En Java, este tipo de estructuras se amplía con la capacidad de analizar tanto números, como enumeraciones, como 
+caracteres asi como cadenas de texto completas. Esta funcionalidad añadida amplía el repertorio de posibles casos de 
+uso de los switch statements, ya que, podemos hacer revisiones de tipos de datos que en C++ están limitados a enteros 
 o caracteres.
 <br/><br/>
-Una de las principales formas de utilizacion de este tipo de estructuras es el analisis de comandos ingresados por 
+Una de las principales formas de utilización de este tipo de estructuras es el análisis de comandos ingresados por 
 el usuario en un menu, o la revision de una cadena con respecto de diversas opciones (ambos ejemplos integrales de 
-nuestro trabajo en el curso y con significacia en el analisis de archivos e input del usuario.
+nuestro trabajo en el curso y con significacia en el análisis de archivos e input del usuario.
 <br/><br/>
 Aunque en algunos casos su utilidad pueda ser remplazada por un if-then-else statement compuesto, es muy importante 
-conocer de este también, ya que en algunos casos la solucion más intuitiva puede surgir en forma de un switch 
+conocer de este también, ya que en algunos casos la solución más intuitiva puede surgir en forma de un switch 
 statement.</p>
 <procedure>
 <tabs>
@@ -955,7 +969,8 @@ public class Example {
                 break;
             }
             default: {
-                System.out.println("Ingresaste un numero distinto de 1, 2, 3, 4 o 5");
+                System.out.println(
+                "Ingresaste un numero distinto de 1, 2, 3, 4 o 5");
                 break;
             }
         }
@@ -1075,20 +1090,20 @@ public class Example {
 
 
 ## Ternary If-Else Operator
-<p>Aunque en la mayoria de este texto lo hemos tratado como una estructura de control logica. El operador ternario 
-de if-else es un operador logico cuyo proposito es acortar el proceso de escritura de una expresion del tipo if-else.
-Es decir, su proposito es transformar en una simple linea el proceso de escribir una condicion if larga y el cuerpo 
-de tanto esta condicion y su else.
+<p>Aunque en la mayoría de este texto lo hemos tratado como una estructura de control lógica. El operador ternario 
+de if-else es un operador lógico cuyo propósito es acortar el proceso de escritura de una expresión del tipo if-else.
+Es decir, su propósito es transformar en una simple línea el proceso de escribir una condición if larga y el cuerpo 
+de tanto esta condición y su else.
 <br/><br/>
-Por este motivo, su utilizacion es mucho menos visible en codigo en general, mas bien es un operador que se utiliza 
-en algunos casos cuando el codigo se puede volver mas legible o simple al reducir bloques de codigo largos que el 
-usuario debe leer para entender el proposito de los mismos, acortando este proceso a una o dos lineas en donde la 
-condicion viene en un inicio, seguido de un <code>?</code>, luego de la condicion en caso de que la pregunta sea 
-verdadera, separada por un <code>:</code>, y al final el codigo a ejecutar en el codigo si la condicion inicial es 
+Por este motivo, su utilización es mucho menos visible en código en general, más bien es un operador que se utiliza 
+en algunos casos cuando el código se puede volver más legible o simple al reducir bloques de código largos que el 
+usuario debe leer para entender el propósito de los mismos, acortando este proceso a una o dos líneas en donde la 
+condición viene en un inicio, seguido de un <code>?</code>, luego de la condición en caso de que la pregunta sea 
+verdadera, separada por un <code>:</code>, y al final el código a ejecutar en el código si la condición inicial es 
 falsa.
 <br/><br/>
-Debido a la simpleza de este operador, los ejemplos a continuacion seran en muchos casos ejemplos complejos en donde 
-en alguna seccion se utilice este operador.
+Debido a la simpleza de este operador, los ejemplos a continuación serán en muchos casos ejemplos complejos en donde 
+en alguna sección se utilice este operador.
 </p>
 <procedure>
 <tabs>
@@ -1101,7 +1116,7 @@ package example;
 public class Example {
     public static void main(String[] args) {
         int num = 5;
-        String resultado = (num % 2 == 0) /*Condicion*/
+        String resultado = (num % 2 == 0) /*condición*/
         ? "El numero es par" /*Resultado si es verdadero*/
         : "El numero es impar"; /*Resultado si es falso*/
         System.out.println(resultado);

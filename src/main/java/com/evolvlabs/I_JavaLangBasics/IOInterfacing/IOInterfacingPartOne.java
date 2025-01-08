@@ -105,13 +105,6 @@ public class IOInterfacingPartOne {
                     System.out.println(Colorizer.colorWithYellowLetters("Nombre Del Archivo: ") + entryFile.getFileName());
                     System.out.println(Colorizer.colorWithYellowLetters("\t\tRuta Absoluta del Archivo: ") + entryFile.toAbsolutePath());
                     System.out.println(Colorizer.colorWithYellowLetters("\t\tRuta Relativa del Archivo: ") + entryFile.toUri());
-                    System.out.println(Colorizer.colorWithYellowLetters("\t\tPrimeras Lineas del Archivo: "));
-                    try ( var readLines= Files.lines(entryFile)){
-                        var lines = readLines.toList();
-                        for (int i = 0; i < 5; i++) {
-                            System.out.println("\t\t\t" + Colorizer.colorWithMagentaLetters(lines.get(i)));
-                        }
-                    }
                 }
        } catch (IOException e) {
            System.out.println(Colorizer.colorWithCyanLetters("Error: IOException (archivo no encontrado) " +
@@ -300,7 +293,8 @@ public class IOInterfacingPartOne {
      */
     private static void createFileInUsersDocumentsDirectory(){
         //! En este archivo vamos a crear nuestros propios archivos de texto en la carpeta de documentos
-        try(Scanner scannerInstance = new Scanner(System.in))
+        Scanner scannerInstance = new Scanner(System.in);
+        try
         {
           //! Primero tomemos la direccion del home del usuario
           String usersHomeDirectory = System.getProperty("user.home");
@@ -312,7 +306,7 @@ public class IOInterfacingPartOne {
                 if("Done".equalsIgnoreCase(userInput)){
                     break;
                 }
-                Path filePath = Path.of(usersHomeDirectory, "Documents", userInput + ".txt");
+                Path filePath = Path.of(usersHomeDirectory, "Documents", userInput);
                 if(!Files.exists(filePath)){
                     Files.createFile(filePath);
                     System.out.println(Colorizer.colorWithYellowLetters("Archivo creado exitosamente en la ruta: ") + filePath.toAbsolutePath());
