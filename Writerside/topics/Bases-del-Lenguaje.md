@@ -1,4 +1,4 @@
-# Bases del Lenguaje
+# Java Base - Bases del Lenguaje
 
 > En este documento, vamos a revisar algunas de las bases teóricas requeridas para comprender el código que
 > revisaremos en secciones posteriores.

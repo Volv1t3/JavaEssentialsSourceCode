@@ -1,4 +1,4 @@
-# Java VS C++
+# Java Base - Java VS C++
 
 > Ahora que tenemos nuestro sistema configurado, es importante tomarnos un tiempo para detallar algunas distinciones
 > relevantes que podemos hacer de Java en comparación con C++, un lenguaje que han estudiado hasta el momento. <br/>

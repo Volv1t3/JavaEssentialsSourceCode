@@ -1,4 +1,4 @@
-# Excepciones
+# Java Base - Excepciones
 
 > Una vez analizadas la mayoría de las estructuras de control incluidas en Java, sus tipos de datos, ejemplos de 
 > código normales y hasta cierto punto el trabajo con tema de usuarios. Es momento de volver a nuestros programas 

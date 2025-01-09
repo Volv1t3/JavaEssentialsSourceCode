@@ -1,4 +1,4 @@
-# Fundamentos de OOP
+# Fundamentos de OOP - Estructuras Básicas
 
 > Felicidades, si has llegado a este punto (leyendo todo el texto en anterior), estás casi al final del camino en 
 > nuestro estudio de Java. Lo que queda en esta sección es revisar todos los conceptos relacionados con: 

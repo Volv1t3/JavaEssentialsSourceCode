@@ -22,5 +22,7 @@
     </toc-element>
     <toc-element toc-title="OOP En Java">
         <toc-element topic="Fundamentos-de-OOP.md"/>
+        <toc-element topic="Clases-Anónimas-Internas-y-Lambdas.md"/>
+        <toc-element topic="Genéricos-en-Java.md"/>
     </toc-element>
 </instance-profile>
