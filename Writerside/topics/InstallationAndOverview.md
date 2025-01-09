@@ -7,6 +7,12 @@ Para cada una de estas secciones, la documentación ya incluye un hyperlink a ca
 
 ## Instalación del IDE
 
+<p><format color="OrangeRed">OJO: </format> el video es un poco largo (lo siento), pero te muestro varios aspectos de Java rápidamente, asi como del entorno para que podamos 
+empezar el curso el día indicado.
+Si bien esto puede ser un poco tedioso, no tienes que verlo si prefieres instalar el programa a tu manera, o seguir la documentación adicional por 
+debajo del video. De cualquier manera gracias por tu inscripción, ¡nos vemos en el curso!</p>
+
+<video src="https://youtu.be/TXK_7zZgW4g"/>
 <p>Para instalar el entorno podemos intentar trabajar de dos maneras: una descargándolo directamente desde la página de JetBrains o utilizando una herramienta de JetBrains llamada <code>JetBrains Toolbox</code>. Esta segunda opción nos permite descargar directamente el entorno en su versión <b>Community</b>, la cual es gratis para nuestro tipo de uso. Mientras que la opción de descargarlo a través del sistema de JetBrains involucra descargar <code>IntelliJ IDEA Ultimate</code>, el cual tiene un tiempo de uso gratis de 30 días.
 <br/><br/>
 Para este curso, por motivos de simplicidad de instalación, se opta por mostrar la forma de instalación del entorno a través de <code>JetBrains Toolbox</code>.</p>
