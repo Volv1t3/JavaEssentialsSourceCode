@@ -502,7 +502,7 @@ genéricas, se guardan durante ejecución y se pueden conocer con <code>getClass
 algunos de los tipos parametrizados que usamos son eliminados durante compilación por lo que el programa no puede 
 conocer qué tipo se está guardando. Ciertamente, el proceso es mucho más complicado de lo que se define en la 
 implementación general del lenguaje. <br/><br/>
-No obstante, la idea es conocer esto para poder entender el porque de no poder realizar <code>new E[], o new E(), 
+No obstante, la idea es conocer esto para poder entender el porqué de no poder realizar <code>new E[], o new E(), 
 obj instanceof E
 </code>.
 </p>
@@ -673,7 +673,7 @@ específica.</li>
 <li><b><format color="CornFlowerBlue">Definición General</format></b>: Un tipo de especialización de tipo Lowerbound 
 establece que un tipo genérico tendrá como límite inferior una clase o interfaz específica. Esto significa que el tipo genérico aceptará esa clase o cualquier clase padre de la misma.</li>
 <li><b><format color="CornFlowerBlue">Sintaxis Básica</format></b>: La declaración de un Lowerbound usa el carácter 
-comodín `?` (o algun identificador) seguido de la palabra clave `super`. <code>Hay que tener en cuenta que las 
+comodín `?` (o algún identificador) seguido de la palabra clave `super`. <code>Hay que tener en cuenta que las 
 declaraciones de tipo 
 LowerBound no pueden hacerse en clases o interfaces, solo en métodos</code>
 
@@ -894,7 +894,8 @@ public class EjemploTypeBouding {
                             = (EjemploGenericoUno<?, ?, ?>) obj;
                 return Objects.equals(typeOneParam, that.typeOneParam) 
                 &&Objects.equals(typeTwoParam, that.typeTwoParam) 
-                && Objects.equals(typeThreeParam, that.typeThreeParam);
+                && Objects.equals(typeThreeParam, 
+                            that.typeThreeParam);
             }catch (Exception e){
                 e.printStackTrace();
                 return false;

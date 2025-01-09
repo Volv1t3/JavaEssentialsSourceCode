@@ -23,16 +23,16 @@ relacionado con una clase sino con un cuerpo de función especifico que se puede
 anónima. Es más, en IntelliJ, existen herramientas internas que te ayudan a reducir una clase anónima en un método 
 lambda y luego un <code>method reference</code>.<br/><br/>
 En esta sección, estudiaremos las reglas estructurales de estas metodologías de trabajo, y algunos ejemplos de su 
-uso con clases relacionadas al manejo de estructuras de datos.
+uso con clases relacionadas con el manejo de estructuras de datos.
 </p>
 
 ## Clases Internas
 <p> Como se estableció anteriormente, una clase interna es una variación sobre la declaración de una clase básica 
 que se declara <code>dentro de una clase de tipo top-level-class</code>. Es decir, estas clases se declaran dentro 
-de la única clase pública del archivo. Esto quiere decir que esta sujeta a modificadores de acceso propio, los 
+de la única clase pública del archivo. Esto quiere decir que está sujeta a modificadores de acceso propio, los 
 cuales le pueden permitir instanciación, o no, etc.
 <br/><br/>
-En este caso, la diferencia clave de este tipo de clases con otras es que <code>estan sujetas a una clase externa, 
+En este caso, la diferencia clave de este tipo de clases con otras es que <code> están sujetas a una clase externa, 
 por tanto, pueden ser instanciadas o no, algo que no se puede hacer con clases secundarias en un archivo
 </code>. Para comprender este proceso, en primera instancia revisemos algunos de los requerimientos (tal como en la 
 anterior sección), con respecto a su definición, contenido y modificadores.
@@ -718,7 +718,7 @@ de su utilización que se puede revisar.
 <p> El último paso en nuestra reducción de código y archivos en nuestra base, es la utilización de métodos Lambda. 
 En C++, usualmente no se revisa este tema porque su declaración es compleja y sale del enfoque del curso. Sin 
 embargo, tanto para cursos de Java y estructuras de datos, se utilizan estos tipos de métodos en ciertos contextos, 
-como desarollo y manejo de aplicaciones con interfáz gráfica, o en aplicaciones que trabajen con estructuras de 
+como desarrollo y manejo de aplicaciones con interfáz gráfica, o en aplicaciones que trabajen con estructuras de 
 datos internas de Java. <br/><br/>
 En fin, el conocimiento de estos métodos en Java, su definición y aplicabilidad es muy útil para pasar de clases, a 
 clases anónimas y en fin a métodos anónimos capaces de reducir implementaciones de archivos enteros a pocas líneas, 
