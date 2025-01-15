@@ -141,7 +141,7 @@ public class NonGenericBaseClass {
 
 package OOP_Examples;
 // Clase hija genérica
-public class GenericDerivedClass<T> extends NonGenericBase {
+public class GenericDerivedClass<T> extends NonGenericBaseClass {
     //... código e implementación
 }
 ```
@@ -224,7 +224,7 @@ public interface ChildGenericInterfaceDecl<T>
 package OOP_Examples;
 // Interfaz genérica hija que extiende con un nuevo genérico
 public interface AnotherChildGenericInterfaceDecl<X, Y> 
-                    extends ParentGenericInterface<X> {
+                    extends ParentGenericInterfaceDecl<X> {
         
        void anotherChildMethod(Y value);
 }
@@ -251,7 +251,7 @@ public interface GenericInterfaceDecl<T> {
 package OOP_Examples;
 // Clase concreta implementa la interfaz sin un genérico
 public class NonGenericClassImpl 
-             implements GenericInterface<Integer> {
+             implements GenericInterfaceDecl<Integer> {
     @Override
     public void method(Integer value) {
         System.out.println("Valor: " + value);
@@ -283,13 +283,13 @@ en tiempo de ejecución.</code> En general, estas se declaran de la siguiente fo
 ```Java
 //... en el archivo AbstractGenericClassDecl.java
 
-OOP_Examples;
+package OOP_Examples;
 public abstract class AbstractGenericClassDecl<T> {
     
     // Instancia del tipo genérico permitida
     private T value; 
 
-    public AbstractGenericClass(T value) {
+    public AbstractGenericClassDecl(T value) {
         this.value = value;
     }
 
@@ -729,7 +729,7 @@ public class Producto {
 package OOP_Examples;
 // Clase hija concreta
 public class AlimentoNoPerecedero extends Producto {
-    public Alimento(String nombre) {
+    public AlimentoNoPerecedero(String nombre) {
         super(nombre);
     }
 }
@@ -737,12 +737,13 @@ public class AlimentoNoPerecedero extends Producto {
 //... en algun archivo que maneje un Almacen
 
     // Método con Lowerbound
-    public static void 
-                llenarAlmacen(
-                Almacenable<? super Alimento> almacen, 
-                List<Alimento> alimentos) {
-    for (Alimento alimento : alimentos) {
-        almacen.almacenar(alimento);
+    public static void
+    llenarAlmacen(
+            Almacenable<? super AlimentoNoPerecedero> almacen,
+            List<AlimentoNoPerecedero> alimentos) {
+        for (AlimentoNoPerecedero alimento : alimentos) {
+            almacen.almacenar(alimento);
+        }
     }
 }
 ```

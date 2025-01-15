@@ -65,7 +65,7 @@ public class Example{
         byte localVar = 20;
         Byte localWrappedByte = Byte.valueOf("24");
         final Byte localFinalWrappedByte = 
-                                Byte.valueOf((Byte) 100);
+                                Byte.valueOf((byte) 100);
     }
 }
 </code-block>
@@ -133,15 +133,15 @@ public class example{
 package example;
 
 public class example{
-    private long longOne = 12400.40;
-    public final long longTwo = 1300.2400
+    private long longOne = 12400L;
+    public final long longTwo = 1300L;
 
     public static void main(String[] args){
-    long primLongOne = 12345L;
-    final long primLongTwo = 67890L;
-    Long wrapLongOne = Long.valueOf(98765);
-    //! Ejemplo de auto-boxing implicito
-    final Long wrapLongTwo = Long.valueOf("54321");
+        long primLongOne = 12345L;
+        final long primLongTwo = 67890L;
+        Long wrapLongOne = Long.valueOf(98765);
+        //! Ejemplo de auto-boxing implicito
+        final Long wrapLongTwo = Long.valueOf("54321");
     }
 }
 </code-block></li>
@@ -187,9 +187,9 @@ public class example{
 package example;
 
 public class example {
-private float floatOne = 1.5f;
-public final float floatTwo = 2.5f;
-protected float floatThree = 3.14f;
+    private float floatOne = 1.5f;
+    public final float floatTwo = 2.5f;
+    protected float floatThree = 3.14f;
 
     public static void main(String[] args) {
         // Ejemplo usando Float.valueOf()
@@ -216,9 +216,9 @@ protected float floatThree = 3.14f;
 package example;
 
 public class example {
-private double doubleOne = 1.5d;
-public final double doubleTwo = 3.14159d;
-protected double doubleThree = 2.71828d;
+    private double doubleOne = 1.5d;
+    public final double doubleTwo = 3.14159d;
+    protected double doubleThree = 2.71828d;
 
     public static void main(String[] args) {
         // Ejemplo usando Double.valueOf()

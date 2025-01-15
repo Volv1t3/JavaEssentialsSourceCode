@@ -139,11 +139,11 @@ y el trabajo con este.
                              ArrayList<Integer> exParamThree)
         {
             this.paramOne = exParamOne;
-            this.exParamTwo = exParamTwo;
+            this.paramTwo = exParamTwo;
             this.paramThree = exParamThree;
         }
         
-        public OOPExample(String exParamOne, String exParamTwo){
+        public OOPExampleOne(String exParamOne, String exParamTwo){
             this.paramOne = exParamOne;                 
             this.paramTwo = exParamTwo;
              
@@ -339,7 +339,7 @@ espera que cualquier clase implemente en Java
         @Override
         public int compareTo(OOPExampleOne other) {
             if (other == null) {
-                throw 
+                throw new
                  IllegalArgumentException(
                  "La otra instancia es nula!");
             }
@@ -398,11 +398,11 @@ public class OOPExampleOne
                              ArrayList<Integer> exParamThree)
         {
             this.paramOne = exParamOne;
-            this.exParamTwo = exParamTwo;
+            this.paramTwo = exParamTwo;
             this.paramThree = exParamThree;
         }
         
-        public OOPExample(String exParamOne, String exParamTwo){
+        public OOPExampleOne(String exParamOne, String exParamTwo){
             this.paramOne = exParamOne;                 
             this.paramTwo = exParamTwo;
              
@@ -497,7 +497,7 @@ public class OOPExampleOne
         @Override
         public int compareTo(OOPExampleOne other) {
             if (other == null) {
-                throw 
+                throw new
                  IllegalArgumentException(
                  "La otra instancia es nula!");
             }
@@ -1043,7 +1043,7 @@ El siguiente ejemplo, mostrará la manera de implementar una mini jerarquía de 
     //... en el archivo ClaseAbstractaUno.java
     package OOP_Examples;
     
-    public class ClaseAbstractaUno{
+    public abstract class ClaseAbstractaUno{
         
         /*
          * Al igual que cualquier método, un método abstracta 
@@ -1062,7 +1062,7 @@ El siguiente ejemplo, mostrará la manera de implementar una mini jerarquía de 
     
     package OOP_Examples;
     
-    public class ClaseAbstrataDos extends ClaseAbstractaDos{
+    public abstract class ClaseAbstractaDos extends ClaseAbstractaUno{
     
         /*
          * Declarando un método abstracto "saySomething"
@@ -1439,9 +1439,9 @@ class ImplementacionClaseConcreta extends ClaseSecundariaAbstracta {
     // Implementación de métodos abstractos de las clases base
     @Override
     public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre + 
-        ", Edad: " + edad + ", Salario: " 
-        + salario + ", Posición: " + posicion);
+        System.out.println("Nombre: " + this.getNombre() +
+               ", Edad: " + this.getEdad() + ", Salario: "
+               + salario + ", Posición: " + posicion);
     }
 
     @Override
@@ -1662,7 +1662,7 @@ public interface CompleteInterface {
         System.out.println("Este es un método estático 1.");
     }
 
-    // Static method with explicit modifiers and functionality
+   
     public static void metodoEstatico2() {
         System.out.println("Este es un método estático 2.");
     }
@@ -2266,19 +2266,12 @@ public record AdvancedRecord(String campo1, int campo2) {
         return campo2 * 2;
     }
 
-    // Constructor compacto
-    public AdvancedRecord {
-        if (campo2 < 0) {
-            throw new 
-                IllegalArgumentException("campo2 debe ser positivo");
-        }
-    }
-    
     // Constructor Completo
     /*
      * Los campos internos se generan con el nombre declarado
      * al inicio del Record, por tanto se accede esta manera
      * y declara con el mismo nombre en el constructor
+    */
     public AdvancedRecord(String campo1, int campo2){
         this.campo1 = campo1;
         this.campo2 = campo2;

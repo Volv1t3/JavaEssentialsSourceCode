@@ -373,7 +373,7 @@ class ExternalClass extends TopLevelClassB.B1 {
     }
 
     private class InnerComparable 
-                extends SortedList 
+               
                 implements Comparable<InnerComparable> {
         private String name;
 
@@ -780,9 +780,6 @@ public class ExampleWithLambda {
     interface Action {
         void execute();
     }
-    
-    
-    
 }
 ```
 </li>

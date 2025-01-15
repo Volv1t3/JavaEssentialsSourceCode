@@ -243,71 +243,74 @@ package exception_example;
 
 public class ExceptionExampleThree {
 
-public static void main(String[] args) {
-
-        try {
-            // Arreglo con tamaño 
-            // incorrecto para 
-            // forzar ArrayStoreException
-            Object[] array = 
-                new String[5];
-            array[0] = 10; // Error
-
-            // Casteo incorrecto 
-            // para ClassCastException
-            Object obj = 
-                Integer.valueOf(42);
-            String str = 
-                (String) obj; // Error
-
-            // Acceso a constante de 
-            // enumeración inexistente para 
-            // EnumConstantNotPresentException
-            TestEnum enumValue = 
-                TestEnum.valueOf(
-                    "NON_EXISTENT_ENUM");
-
-        } catch (ArrayStoreException 
-                    arrayStoreException) {
-            // Bloque Catch: Error
-            System.out.println(
-                "Error: ArrayStoreException.");
-            System.out.println(arrayStoreException
-                                .getMessage());
-
-        } catch (ClassCastException 
-                    classCastException) {
-            // Bloque Catch: Error
-            System.out.println(
-                "Error: ClassCastException.");
-            System.out.println(classCastException
-                                .getMessage());
-
-        } catch (EnumConstantNotPresentException 
-                    enumException) {
-            // Bloque Catch: Error
-            System.out.println(
-                "Error: EnumConstantNot");
-            System.out.println(enumException
-                                .getMessage());
-
-        } catch (RuntimeException 
-                    runtimeException) {
-            // Bloque Catch adicional
-            System.out.println(
-                "Error: RuntimeException.");
-            runtimeException.printStackTrace();
-
-        } catch (Exception exception) {
-            // Bloque Catch genérico
-            System.out.println(
-                "Error: Excepción general.");
-            exception.printStackTrace();
-        }
+            private enum TestEnum {;}
     
-    }
+            public static void main(String[] args) {
 
-} 
+            try {
+                
+                // Arreglo con tamaño 
+                // incorrecto para 
+                // forzar ArrayStoreException
+                Object[] array =
+                        new String[5];
+                array[0] = 10; // Error
+
+                // Casteo incorrecto 
+                // para ClassCastException
+                Object obj =
+                        Integer.valueOf(42);
+                String str =
+                        (String) obj; // Error
+
+                // Acceso a constante de 
+                // enumeración inexistente para 
+                // EnumConstantNotPresentException
+                TestEnum enumValue =
+                        TestEnum.valueOf(
+                                "NON_EXISTENT_ENUM");
+
+            } catch (ArrayStoreException
+                    arrayStoreException) {
+                // Bloque Catch: Error
+                System.out.println(
+                        "Error: ArrayStoreException.");
+                System.out.println(arrayStoreException
+                        .getMessage());
+
+            } catch (ClassCastException
+                    classCastException) {
+                // Bloque Catch: Error
+                System.out.println(
+                        "Error: ClassCastException.");
+                System.out.println(classCastException
+                        .getMessage());
+
+            } catch (EnumConstantNotPresentException
+                    enumException) {
+                // Bloque Catch: Error
+                System.out.println(
+                        "Error: EnumConstantNot");
+                System.out.println(enumException
+                        .getMessage());
+
+            } catch (RuntimeException
+                    runtimeException) {
+                // Bloque Catch adicional
+                System.out.println(
+                        "Error: RuntimeException.");
+                runtimeException.printStackTrace();
+
+            } catch (Exception exception) {
+                // Bloque Catch genérico
+                System.out.println(
+                        "Error: Excepción general.");
+                exception.printStackTrace();
+            }
+
+        }
+
+    }
 </code-block>
 </tab>
 </tabs>
@@ -425,9 +428,9 @@ public class ExceptionExampleFive{
         Scanner fileScanner = null;
             try {
                 fileScanner = new Scanner
-                            (new File("RESOURCE_FILE_A.txt"))
+                            (new File("RESOURCE_FILE_A.txt"));
                 //! Con el objeto abierto es momento 
-                de leer un cierto numero de lineas de el
+                // de leer un cierto numero de lineas de el
                 int counter = 0;
                 while (counter < numOfLines){
                     if (fileScanner.hasNextLine()){
@@ -469,67 +472,66 @@ package exception_example;
 
 public class ExceptionExampleSix{
 
-Scanner inputScanner = null; // Scanner to ask user for input
-Scanner fileScanner = null; // Scanner to read file
+        static Scanner inputScanner = null; // Scanner to ask user for input
+        static Scanner fileScanner = null; // Scanner to read file
 
-        try {
-            // Ask user for a file path
-            inputScanner = new Scanner(System.in);
-            System.out.println(
-            "Por favor, introduzca la ruta del archivo:");
-            String filePath = inputScanner.nextLine();
-
-            // Create a File object
-            File file = new File(filePath);
-
-            // Check if the file exists
-            if (!file.exists()) {
-                throw new IllegalStateException(
-                "Error: El archivo no existe"+
-                " en la ruta proporcionada.");
-            }
-
-            // Open the file and read its contents
-            fileScanner = new Scanner(file);
-            System.out.println("Contenido del archivo:");
-            while (fileScanner.hasNextLine()) {
-                System.out.println(fileScanner.nextLine());
-            }
-        } catch (IllegalStateException illegalStateException) {
-            System.out.println(
-            "Error: " + illegalStateException.getMessage());
-        } catch (FileNotFoundException fileNotFoundException) {
-            System.out.println(
-            "Error: No se pudo abrir el archivo. "+
-            " excepción encontrada: ");
-            System.out.println(fileNotFoundException.getMessage());
-        } catch (NoSuchElementException noSuchElementException) {
-            System.out.println(
-            "Error: No se pudo leer nada por consola." + 
-            " excepción encontrada: ");
-            System.out.println(noSuchElementException.getMessage());
-        } catch(SecurityException securityException){
-           System.out.println("Error: No se pudo acceder al archivo."+ 
-           " excepción encontrada: ");
-           System.out.println(securityException.getMessage());
-        } catch (RuntimeException e) {
-            System.out.println("Error: excepción encontrada: ");
-            System.out.println(e.getMessage());
-        }  finally {
-            // Close scanners if initialized
-            if (inputScanner != null) {
-                inputScanner.close();
-            }
-            if (fileScanner != null) {
-                fileScanner.close();
+        public static void main(String[] args) {
+            try {
+                // Ask user for a file path
+                inputScanner = new Scanner(System.in);
                 System.out.println(
-                "Recurso Scanner cerrado correctamente.");
+                        "Por favor, introduzca la ruta del archivo:");
+                String filePath = inputScanner.nextLine();
+
+                // Create a File object
+                File file = new File(filePath);
+
+                // Check if the file exists
+                if (!file.exists()) {
+                    throw new IllegalStateException(
+                            "Error: El archivo no existe"+
+                                    " en la ruta proporcionada.");
+                }
+
+                // Open the file and read its contents
+                fileScanner = new Scanner(file);
+                System.out.println("Contenido del archivo:");
+                while (fileScanner.hasNextLine()) {
+                    System.out.println(fileScanner.nextLine());
+                }
+            } catch (IllegalStateException illegalStateException) {
+                System.out.println(
+                        "Error: " + illegalStateException.getMessage());
+            } catch (FileNotFoundException fileNotFoundException) {
+                System.out.println(
+                        "Error: No se pudo abrir el archivo. "+
+                                " excepción encontrada: ");
+                System.out.println(fileNotFoundException.getMessage());
+            } catch (NoSuchElementException noSuchElementException) {
+                System.out.println(
+                        "Error: No se pudo leer nada por consola." +
+                                " excepción encontrada: ");
+                System.out.println(noSuchElementException.getMessage());
+            } catch (SecurityException securityException){
+                System.out.println("Error: No se pudo acceder al archivo."+
+                        " excepción encontrada: ");
+                System.out.println(securityException.getMessage());
+            } catch (RuntimeException e) {
+                System.out.println("Error: excepción encontrada: ");
+                System.out.println(e.getMessage());
+            }  finally {
+                // Close scanners if initialized
+                if (inputScanner != null) {
+                    inputScanner.close();
+                }
+                if (fileScanner != null) {
+                    fileScanner.close();
+                    System.out.println(
+                            "Recurso Scanner cerrado correctamente.");
+                }
             }
         }
     }
-
-}
-}
 ```
 </tab>
 </tabs>
@@ -667,6 +669,8 @@ public class ExceptionExampleEight{
 ```Java
 package exception_examples;
 import java.io.*;
+import java.util.stream.Stream;
+
 
 public class ExceptionExampleNine{
 

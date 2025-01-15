@@ -210,10 +210,11 @@ String rutaArchivo = System
 ```Java
 package io_examples;
 
-public class IOExampleTwo{
-
-import java.nio.file.*;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class IOExampleTwo {
@@ -318,9 +319,6 @@ String rutaBase = System.getProperty("user.home");
 
 }
 
-
-
-}
 ```
 </tab>
 </tabs>
@@ -412,11 +410,14 @@ package io_examples;
 // Ejemplo de uso de java.nio.file.Path
 // y java.nio.file.Paths
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.*;
-import java.util.Locale;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
 import java.util.stream.Stream;
+
 
 public class IOExampleThree {
 
@@ -634,12 +635,13 @@ en un solo  </li>
 package io_examples;
 
 
-package io_examples;
-
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class IOExampleFour {
 public static void main(String[] args) {
@@ -793,11 +795,17 @@ un BufferedReader. No se recomienda usar sola.
 <tabs>
 <tab title="Jerarquía Reader">
 <code-block lang="Java">
-    package io_example;
+package io_example;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.*;
+import java.util.stream.Stream;
     
-    import java.io.*;
-    
-    public class IOExampleFive {
+public class IOExampleFive {
     public static void main(String[] args) {
     // Ruta del archivo para lectura
     File archivo = new
@@ -867,8 +875,8 @@ un BufferedReader. No se recomienda usar sola.
                 + e.getMessage());
             }
     
-            System.out.println("
-            \n\n=== Leyendo archivo con LineNumberReader ===");
+            System.out.println(\
+                "\n\n=== Leyendo archivo con LineNumberReader ===");
             try (LineNumberReader lineNumberReader = 
                 new LineNumberReader(new FileReader(archivo))) {
                 String linea;
@@ -939,8 +947,7 @@ Requiere que las clases de los objetos implementen <code>Serializable</code>. Se
 package io_example;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class IOExampleSix {
     public static void main(String[] args) {
@@ -1078,7 +1085,7 @@ Es muy útil para persistencia de datos o transmisión de objetos entre aplicaci
 package io_example;
 
 import java.io.*;
-import java.util.List;
+import java.util.*;
 
 public class IOExampleSeven {
     public static void main(String[] args) {

@@ -544,6 +544,7 @@ public class example {
                     default:
                         System.out.println("Input inválido detectado." 
                         + " Deteniendo ejecución.");
+                        break;
                 }
             }
         } while (item_sold != -1);
@@ -989,50 +990,57 @@ package example;
 import java.util.Scanner;
 
 public class Example {
-public static void main(String[] args) {
-Scanner scanner = new Scanner(System.in);
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
-        
-        enum Day {
-            LUNES, MARTES, MIERCOLES, JUEVES,
-            VIERNES, SABADO, DOMINGO
-        }
 
-        System.out.print("Ingrese un día de la semana" 
-             + "(e.g., LUNES, MARTES): ");
-        String input = scanner.nextLine().toUpperCase();
-
-        Day day = null;
-        switch (input) {
-            case "LUNES" -> day = Day.LUNES;
-            case "MARTES" -> day = Day.MARTES;
-            case "MIERCOLES" -> day = Day.MIERCOLES;
-            case "JUEVES" -> day = Day.JUEVES;
-            case "VIERNES" -> day = Day.VIERNES;
-            case "SABADO" -> day = Day.SABADO;
-            case "DOMINGO" -> day = Day.DOMINGO;
-            default -> {
-                System.out.println("Dia ingresado invalido);
-                return;
+            enum Day {
+                LUNES, MARTES, MIERCOLES, JUEVES,
+                VIERNES, SABADO, DOMINGO
             }
+
+            System.out.print("Ingrese un día de la semana"
+                    + "(e.g., LUNES, MARTES): ");
+            String input = scanner.nextLine().toUpperCase();
+
+            Day day = null;
+            switch (input) {
+                case "LUNES" -> day = Day.LUNES;
+                case "MARTES" -> day = Day.MARTES;
+                case "MIERCOLES" -> day = Day.MIERCOLES;
+                case "JUEVES" -> day = Day.JUEVES;
+                case "VIERNES" -> day = Day.VIERNES;
+                case "SABADO" -> day = Day.SABADO;
+                case "DOMINGO" -> day = Day.DOMINGO;
+                default -> {
+                    System.out.println("Dia ingresado invalido");
+                    return;
+                }
+            }
+
+            String message = switch (day) {
+                case LUNES -> 
+                "¡Inicio de la semana laboral!";
+                case MARTES -> 
+                "¡Segundo día de la semana laboral!";
+                case MIERCOLES -> 
+                "¡Mitad de semana!";
+                case JUEVES -> 
+                "¡Casi es fin de semana!";
+                case VIERNES -> 
+                "¡Último día de la semana laboral!";
+                case SABADO -> 
+                "¡Hora de relajarse, es fin de semana!";
+                case DOMINGO -> 
+                "¡Prepárate para la semana que viene!";
+            };
+
+            System.out.println(message);
+
+            scanner.close();
         }
 
-        String message = switch (day) {
-        case LUNES -> {"¡Inicio de la semana laboral!";}
-        case MARTES -> {"¡Segundo día de la semana laboral!";}
-        case MIERCOLES -> {"¡Mitad de semana!";}
-        case JUEVES -> {"¡Casi es fin de semana!";}
-        case VIERNES -> {"¡Último día de la semana laboral!";}
-        case SABADO -> {"¡Hora de relajarse, es fin de semana!";}
-        case DOMINGO -> {"¡Prepárate para la semana que viene!";}
-        };
-
-        System.out.println(message);
-
-        scanner.close();
     }
-
-}
 ```
 </tab>
 <tab title="Switch Statement III">

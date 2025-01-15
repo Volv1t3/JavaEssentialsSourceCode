@@ -17,7 +17,8 @@ public class PersonalTask extends Task implements Comparable<PersonalTask>{
     private static Integer PERSONAL_TASK_COUNTER = 0;
     /*? Constructores de la clase */
 
-    public PersonalTask(Integer task_ID, String task_Description, QuickTimeStamps task_DueDate, String personalTask_Assignee){
+    public PersonalTask(Integer task_ID, String task_Description,
+                        QuickTimeStamps task_DueDate, String personalTask_Assignee){
         super(0, task_Description, task_DueDate);
         this.set_task_Notes(new PersonalNotes());
         /*! Codigo adicional de nuestra implementacion*/

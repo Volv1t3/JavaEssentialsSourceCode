@@ -227,7 +227,8 @@ public class ModifyYourString {
             }
             else {
                 int finalI = i;
-                if (Arrays.stream(arrayOfPermittedDelimiters).anyMatch(character -> Objects.equals(character, array[finalI]))){
+                if (Arrays.stream(arrayOfPermittedDelimiters)
+                            .anyMatch(character -> Objects.equals(character, array[finalI]))){
                     //! Analysis de caracteres
                     switch(array[i]){
                         case ',' : {

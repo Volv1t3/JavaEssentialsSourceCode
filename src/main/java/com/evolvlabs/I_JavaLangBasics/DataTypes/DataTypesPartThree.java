@@ -16,13 +16,14 @@ public class DataTypesPartThree {
     public static void main(String[] args) {
         
         /*? Declaracion de las variables requeridas para esta clase*/
-        byte[]      /*! arreglo de bytes primitivos*/       primByteArray = new byte[5];
+        byte[]      /*! arreglo de bytes primitivos*/       primByteArray = {(byte) 0, (byte) 0,
+                                                                            (byte) 0,(byte) 0,(byte) 0};
         Byte[]      /*! arreglo de bytes Wrapped*/          wrapByteArray = new Byte[5];
-        short[]     /*! arreglo de shorts primitivos*/      primShortArray = new short[5];
+        short[]     /*! arreglo de shorts primitivos*/      primShortArray = {0,0,0,0,0};
         Short[]     /*! arreglo de shorts Wrapped*/         wrapShortArray = new Short[5];
-        int[]       /*! arreglo de enteros primitivos*/     primIntegerArray = new int[5];
+        int[]       /*! arreglo de enteros primitivos*/     primIntegerArray = {0,0,0,0,0};
         Integer[]   /*! arreglo de enteros Wrapped*/        wrapIntegerArray = new Integer[5];
-        long[]      /*! arreglo de longs primitivos*/      primLongArray = new long[5];
+        long[]      /*! arreglo de longs primitivos*/      primLongArray = {0L,0L,0L,0L,0L};
         Long[]      /*! arreglo de longs Wrapped*/         wrapLongArray = new Long[5];
         float[]     /*! arreglo de floats primitivos*/     primFloatArray = new float[5];
         Float[]     /*! arreglo de floats Wrapped*/        wrapFloatArray = new Float[5];
